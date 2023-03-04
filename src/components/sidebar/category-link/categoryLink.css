@@ -1,0 +1,17 @@
+.category-link{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-size: 18px;
+}
+
+.category-link a {
+    padding: 0 10px;
+    vertical-align: center;
+    width: 100%;
+    line-height: 40px;
+}
+
+.category-link a:hover {
+    background-color: var(--light-grey);
+}

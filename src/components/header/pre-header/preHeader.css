@@ -1,0 +1,10 @@
+.pre-header {
+    background-color: var(--light-grey);
+    padding: 8px 0;
+}
+
+.pre-header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

@@ -1,0 +1,35 @@
+.header-main {
+    padding: 25px 0;
+}
+
+.header-main__logo {
+    flex: 1;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.header-main__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 30px;
+}
+
+.header-main__links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 2;
+}
+
+.header-main__btn-wrap {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+@media screen and (max-width: 991px) {
+    .header-main__links-item {
+        display: none;
+    }
+}
