@@ -48,6 +48,13 @@ code {
   color: #fff;
 }
 
+button {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 0;
+}
+
 i {
   margin-right: 10px;
   font-size: 18px;

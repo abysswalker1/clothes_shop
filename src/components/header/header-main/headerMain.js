@@ -3,8 +3,9 @@ import {Link} from "react-router-dom";
 import './headerMain.css';
 import Contacts from "../../common/contacts/contacts";
 import Button from "react-bootstrap/Button";
+import {connect} from "react-redux";
 
-const HeaderMain = () => {
+const HeaderMain = (props) => {
     return (
         <div className='header-main'>
             <div className="header-main__container container">
@@ -14,14 +15,14 @@ const HeaderMain = () => {
                 </div>
 
                 <div className="header-main__links">
-                    <Link to={'/'}>
+                    <Link to={'/favorites'}>
                         <div className="header-main__links-item">
                             <i className="bi bi-suit-heart"></i>
-                            Избранное <span>(0)</span>
+                            Избранное <span>({props.favs.length})</span>
                         </div>
                     </Link>
 
-                    <Link to={'/'}>
+                    <Link to={'/cart'}>
                         <div className="header-main__links-item">
                             <i className="bi bi-cart3"></i>
                             Корзина <span>(0)</span>
@@ -41,4 +42,10 @@ const HeaderMain = () => {
     );
 };
 
-export default HeaderMain;
+export default connect(
+    (state) => {
+        return {
+            favs: state.products.favs
+        }
+    }
+)(HeaderMain);

@@ -1,0 +1,9 @@
+.favs__title {
+    color: var(--purple);
+    border-bottom: 2px solid lightgrey;
+    padding-bottom: 0.5em;
+}
+
+.favs__title i {
+    font-size: 30px;
+}

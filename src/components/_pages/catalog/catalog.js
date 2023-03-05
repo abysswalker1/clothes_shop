@@ -11,13 +11,13 @@ const Catalog = (props) => {
     const [category, setCategory] = React.useState([]);
 
     useEffect(() => {
-            let neededCategory = props.specificCategories.filter(item => item[0] === title);
+        let neededCategory = props.specificCategories.filter(item => item[0] === title);
 
-            if( neededCategory.length > 0) {
-                setCategory(productsListSelector(neededCategory[0][1]))
-            } else {
-                props.setSpecificCategoryThunk(title);
-            }
+        if( neededCategory.length > 0) {
+            setCategory(productsListSelector(neededCategory[0][1]))
+        } else {
+            props.setSpecificCategoryThunk(title);
+        }
     },[title, props.specificCategories])
 
     return (
