@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 
-const CartList = (props) => {
+const CartList = (props: any) => {
     return (
         <div>
 

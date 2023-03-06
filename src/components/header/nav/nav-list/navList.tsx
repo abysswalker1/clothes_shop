@@ -16,7 +16,7 @@ const NavList = () => {
             > Доставка и оплата </NavItem>
             <NavItem href='/' >Отзывы</NavItem>
             <NavItem href='/'>Контакты</NavItem>
-            <NavItem herf='/' subClass='nav-sale'>Акции</NavItem>
+            <NavItem href='/' subClass='nav-sale'>Акции</NavItem>
         </div>
     );
 };

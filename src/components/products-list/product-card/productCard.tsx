@@ -3,8 +3,14 @@ import './productCard.css';
 import {Link} from "react-router-dom";
 import {connect} from "react-redux";
 import {addProductToFavsAction} from "../../../store/productsReducer";
+import { ProductType } from '../../../types';
 
-const ProductCard = ({item, ...props}) => {
+type Props = {
+    item: ProductType
+    addProductToFavsAction: (item: ProductType) => void
+}
+
+const ProductCard : React.FC<Props> = ({item, ...props}) => {
     let shortedTitle = (item.title?.length > 50)
         ? item.title.slice(0, 46) + '...'
         : item.title;
@@ -27,7 +33,7 @@ const ProductCard = ({item, ...props}) => {
                   onMouseLeave={handleMouseLeave}
             >
                 <div className="product-card__img-wrap">
-                    <img src={item.image} alt="" className="product-card__img" alt={item.title}/>
+                    <img src={item.image} className="product-card__img" alt={item.title}/>
                 </div>
                 <p className="product-card__title">{title}</p>
                 <h2 className="product-card__price">{item.price}</h2>

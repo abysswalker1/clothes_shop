@@ -4,8 +4,9 @@ import './headerMain.css';
 import Contacts from "../../common/contacts/contacts";
 import Button from "react-bootstrap/Button";
 import {connect} from "react-redux";
+import { MainStateType } from '../../../types';
 
-const HeaderMain = (props) => {
+const HeaderMain = (props: any) => {
     return (
         <div className='header-main'>
             <div className="header-main__container container">
@@ -43,7 +44,7 @@ const HeaderMain = (props) => {
 };
 
 export default connect(
-    (state) => {
+    (state: MainStateType) => {
         return {
             favs: state.products.favs
         }

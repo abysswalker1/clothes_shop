@@ -12,6 +12,7 @@ import Catalog from "./components/_pages/catalog/catalog";
 import Product from "./components/_pages/product/product";
 import Favs from "./components/_pages/favs/favs";
 import Cart from "./components/_pages/cart/cart";
+
 class App extends Component {
 
   render() {

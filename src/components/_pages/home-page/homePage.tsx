@@ -1,11 +1,17 @@
 import React, {useEffect} from 'react';
 import ProductsList from "../../products-list/productsList";
-import {getProductsThunk} from "../../../store/productsReducer";
+import { getProductsThunk } from "../../../store/productsReducer";
 import './homepage.css'
 import {connect} from "react-redux";
 import productsListSelector from "../../../selectors/productsListSelector";
+import { MainStateType, ProductsListType } from '../../../types';
 
-const HomePage = (props) => {
+type Props = {
+    productsList: ProductsListType,
+    getProductsThunk: () => void
+}
+
+const HomePage: React.FC<Props> = (props) => {
 
     useEffect(() => {
         if(props.productsList.length <= 0) {
@@ -20,7 +26,7 @@ const HomePage = (props) => {
     );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: MainStateType) => {
     return {
         productsList: productsListSelector(state.products.productsList)
     }

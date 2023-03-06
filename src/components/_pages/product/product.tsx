@@ -4,12 +4,21 @@ import {Link, useParams} from "react-router-dom";
 import {connect} from "react-redux";
 import { getNeededProductThunk, addProductToFavsAction } from "../../../store/productsReducer";
 import Loader from "../../common/loader/loader";
+import { MainStateType, ProductType, ThunkType } from '../../../types';
+import ActionType from '../../../action-types';
 
-const Product = ({ product, ...props }) => {
+type Props = {
+    product: ProductType 
+    isFetching: boolean
+    getNeededProductThunk: (itemId: number) => ThunkType
+    addProductToFavsAction: (product: ProductType) => ActionType
+}
+
+const Product: React.FC<Props> = ({ product, ...props }) => {
     const { itemId } = useParams();
 
     useEffect(() => {
-        props.getNeededProductThunk(itemId);
+        props.getNeededProductThunk(+itemId);
     },[itemId]);
 
     if( props.isFetching ){
@@ -51,7 +60,7 @@ const Product = ({ product, ...props }) => {
 };
 
 export default connect(
-    (state) => {
+    (state: MainStateType) => {
         return {
             product: state.products.neededProduct,
             isFetching: state.products.isFetching

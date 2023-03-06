@@ -5,10 +5,17 @@ import {connect} from "react-redux";
 import {setSpecificCategoryThunk} from "../../../store/productsReducer";
 import ProductsList from "../../products-list/productsList";
 import productsListSelector from "../../../selectors/productsListSelector";
+import { MainStateType, ProductType, SpecificCategoryType } from '../../../types';
 
-const Catalog = (props) => {
+type Props = {
+    specificCategories: Array<SpecificCategoryType>
+    setSpecificCategoryThunk: (title: string) => void
+}
+
+const Catalog : React.FC<Props> = (props) => {
     const { title } = useParams();
-    const [category, setCategory] = React.useState([]);
+
+    const [category , setCategory] = React.useState([]);
 
     useEffect(() => {
         let neededCategory = props.specificCategories.filter(item => item[0] === title);
@@ -18,7 +25,7 @@ const Catalog = (props) => {
         } else {
             props.setSpecificCategoryThunk(title);
         }
-    },[title, props.specificCategories])
+    }, [title, props.specificCategories])
 
     return (
         <div className='catalog'>
@@ -28,7 +35,7 @@ const Catalog = (props) => {
     );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: MainStateType) => {
     return {
         specificCategories: state.products.specificCategories,
     }

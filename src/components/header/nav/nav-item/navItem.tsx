@@ -2,7 +2,15 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import './navItem.css'
 
-const NavItem = (props) => {
+type Props = {
+    href: string,
+    subLinks?: {text: string, href: string}[]
+    subClass?: 'nav-sale' 
+    active?: boolean
+    children: string | JSX.Element
+}
+
+const NavItem = (props: Props) => {
     const [open, setOpen] = React.useState(false);
 
     function listExpand() {

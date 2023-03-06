@@ -1,30 +1,29 @@
+import { MainStateType, ThunkType } from './../types';
 import {
     GET_PRODUCTS,
     GET_CATEGORIES,
     TOGGLE_IS_FETCHING,
     SET_SPECIFIC_CATEGORY, GET_NEEDED_PRODUCT, ADD_PRODUCT_TO_FAVS,
 } from "../action-types";
+import ActionType from "../action-types";
 import {getAllProductsApi, getCategoriesApi, getNeededProductApi, setSpecificCategoryApi} from "../api/api";
+import { ProductType, SpecificCategoryType } from "../types";
+import { Dispatch } from "redux";
+import { ThunkAction } from 'redux-thunk';
 
 let initialState = {
-    neededProduct: null,
-    categories: [
-
-    ],
-    productsList: [
-
-    ],
-    specificCategories: [
-
-    ],
-    favs: [
-
-    ],
+    neededProduct: null as ProductType | null,
+    categories: [] as Array<string>,
+    productsList: [] as Array<ProductType>,
+    specificCategories: [] as Array<SpecificCategoryType>,
+    favs: [] as Array<ProductType>,
     isFetching: false
 }
 
-const productsReducer = (state = initialState, action) => {
-    console.log(action.type)
+export type ProductsStateType = typeof initialState;
+
+const productsReducer = (state: ProductsStateType = initialState, action: ActionType): ProductsStateType => {
+    console.log(action.type, action.payload)
     switch(action.type) {
         case GET_PRODUCTS: {
             return {...state, productsList: action.payload}
@@ -52,7 +51,7 @@ const productsReducer = (state = initialState, action) => {
 
             for( let product of state.favs ){
                 if( product.id === action.payload.id ){
-                    let productIndex = state.favs.indexOf(product)
+                    let productIndex: number = state.favs.indexOf(product);
                     modifiedFavs.splice(productIndex, 1);
 
                     return {...state, favs: modifiedFavs};
@@ -69,20 +68,38 @@ const productsReducer = (state = initialState, action) => {
     }
 }
 
-export const getProductsAction = (products) => ({type: GET_PRODUCTS, payload: products});
-export const getCategoriesAction = (categories) => ({type: GET_CATEGORIES, payload: categories});
-export const toggleIsFetchingAction = (isFetching) => ({type: TOGGLE_IS_FETCHING, payload: isFetching});
-export const setSpecificCategoryAction = (category) => ({type: SET_SPECIFIC_CATEGORY, payload: category});
-export const getNeededProductAction = (product) => ({type: GET_NEEDED_PRODUCT, payload: product});
-export const addProductToFavsAction = (product) => ({type: ADD_PRODUCT_TO_FAVS, payload: product});
+export const getProductsAction = (products: Array<ProductType>): ActionType => ({
+    type: GET_PRODUCTS, 
+    payload: products
+});
+export const getCategoriesAction = (categories: Array<string>): ActionType => ({
+    type: GET_CATEGORIES, 
+    payload: categories
+});
+export const toggleIsFetchingAction = (isFetching: boolean): ActionType => ({
+    type: TOGGLE_IS_FETCHING, 
+    payload: isFetching
+});
+export const setSpecificCategoryAction = (category: SpecificCategoryType): ActionType => ({
+    type: SET_SPECIFIC_CATEGORY, 
+    payload: category
+});
+export const getNeededProductAction = (product: ProductType): ActionType => ({
+    type: GET_NEEDED_PRODUCT, 
+    payload: product
+});
+export const addProductToFavsAction = (product: ProductType): ActionType => ({
+    type: ADD_PRODUCT_TO_FAVS, 
+    payload: product
+});
 
-export const getCategoriesThunk = () => (dispatch) => {
+export const getCategoriesThunk = (): ThunkType => (dispatch: Dispatch<ActionType>) => {
     getCategoriesApi().then(response => {
         dispatch(getCategoriesAction(response));
     })
 }
 
-export const getProductsThunk = () => (dispatch) => {
+export const getProductsThunk = (): ThunkType => (dispatch: Dispatch<ActionType>) => {
     dispatch(toggleIsFetchingAction(true));
 
     getAllProductsApi().then(response => {
@@ -91,7 +108,7 @@ export const getProductsThunk = () => (dispatch) => {
     })
 }
 
-export const setSpecificCategoryThunk = (title) => (dispatch) => {
+export const setSpecificCategoryThunk = (title: string): ThunkType => (dispatch: Dispatch<ActionType>) => {
     dispatch(toggleIsFetchingAction(true));
     setSpecificCategoryApi(title).then(response => {
         dispatch(setSpecificCategoryAction(
@@ -101,7 +118,7 @@ export const setSpecificCategoryThunk = (title) => (dispatch) => {
     })
 }
 
-export const getNeededProductThunk = (itemId) => (dispatch) => {
+export const getNeededProductThunk = (itemId: number): ThunkType => (dispatch: Dispatch<ActionType>) => {
     dispatch(toggleIsFetchingAction(true));
 
     getNeededProductApi(itemId).then(response => {
