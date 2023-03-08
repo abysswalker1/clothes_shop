@@ -58,9 +58,6 @@
 
 .product-create-order {
     background-color: lightpink;
-    font-size: 16px;
-    letter-spacing: 0.07em;
-    font-weight: 500;
 }
 
 .product-create-order:hover {
@@ -81,4 +78,11 @@
 
 .product__description p {
     font-size: 17px;
+}
+
+.product__buttons-item-toggle {
+    font-size: 16px;
+    letter-spacing: 0.07em;
+    font-weight: 500;
+    color: #fff;
 }

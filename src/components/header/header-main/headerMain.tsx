@@ -4,9 +4,15 @@ import './headerMain.css';
 import Contacts from "../../common/contacts/contacts";
 import Button from "react-bootstrap/Button";
 import {connect} from "react-redux";
-import { MainStateType } from '../../../types';
+import { MainStateType, ProductType } from '../../../types';
+import { CartProductType } from '../../../store/cartReducer';
 
-const HeaderMain = (props: any) => {
+type Props = {
+    cart: CartProductType[],
+    favs: ProductType[]
+}
+
+const HeaderMain: React.FC<Props> = ({cart, favs}) => {
     return (
         <div className='header-main'>
             <div className="header-main__container container">
@@ -19,14 +25,14 @@ const HeaderMain = (props: any) => {
                     <Link to={'/favorites'}>
                         <div className="header-main__links-item">
                             <i className="bi bi-suit-heart"></i>
-                            Избранное <span>({props.favs.length})</span>
+                            Избранное <span>({favs.length})</span>
                         </div>
                     </Link>
 
                     <Link to={'/cart'}>
                         <div className="header-main__links-item">
                             <i className="bi bi-cart3"></i>
-                            Корзина <span>(0)</span>
+                            Корзина <span>({cart.length})</span>
                         </div>
                     </Link>
 
@@ -46,7 +52,8 @@ const HeaderMain = (props: any) => {
 export default connect(
     (state: MainStateType) => {
         return {
-            favs: state.products.favs
+            favs: state.products.favs,
+            cart: state.cart.cartList
         }
     }
 )(HeaderMain);

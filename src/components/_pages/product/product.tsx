@@ -6,20 +6,30 @@ import { getNeededProductThunk, addProductToFavsAction } from "../../../store/pr
 import Loader from "../../common/loader/loader";
 import { MainStateType, ProductType, ThunkType } from '../../../types';
 import ActionType from '../../../action-types';
+import { addProductToCartAction, CartProductType } from '../../../store/cartReducer';
 
 type Props = {
     product: ProductType 
     isFetching: boolean
+    cartList: CartProductType[]
     getNeededProductThunk: (itemId: number) => ThunkType
     addProductToFavsAction: (product: ProductType) => ActionType
+    addProductToCartAction: (product: ProductType) => ActionType
 }
 
-const Product: React.FC<Props> = ({ product, ...props }) => {
+const Product: React.FC<Props> = ({ product, cartList, ...props }) => {
     const { itemId } = useParams();
+    const [isInCart, setIsInCart] = React.useState(false);
 
     useEffect(() => {
         props.getNeededProductThunk(+itemId);
     },[itemId]);
+
+    useEffect(() => {
+        if(cartList.find(item => item.id === +itemId)){
+            setIsInCart(true)
+        }
+    },[itemId, cartList]);
 
     if( props.isFetching ){
         return <Loader />
@@ -44,10 +54,14 @@ const Product: React.FC<Props> = ({ product, ...props }) => {
                     >
                         <i className="bi bi-suit-heart"></i>
                     </button>
-                    <button className='product__buttons-item product-add-to-cart' type='button'>
-                        <i className="bi bi-cart4"></i>
-                    </button>
-                    <Link to={'/'} ><div className='product__buttons-item product-create-order'>Оформить заказ</div></Link>
+                    <div className='product__buttons-item product-create-order'>
+                        { (isInCart)
+                            ? <Link to={'/cart'} className='product__buttons-item-toggle'>Оформить заказ</Link> 
+                            : <button className='product__buttons-item-toggle' onClick={() => {props.addProductToCartAction(product)}}>
+                                <i className="bi bi-cart4"></i> Добавить в корзину
+                              </button> 
+                        }
+                    </div>
                 </div>
             </div>
 
@@ -63,8 +77,13 @@ export default connect(
     (state: MainStateType) => {
         return {
             product: state.products.neededProduct,
-            isFetching: state.products.isFetching
+            isFetching: state.products.isFetching,
+            cartList: state.cart.cartList
         }
     },
-    { getNeededProductThunk, addProductToFavsAction }
+    { 
+        getNeededProductThunk, 
+        addProductToFavsAction, 
+        addProductToCartAction
+    }
 )(Product);

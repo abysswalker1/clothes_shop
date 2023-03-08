@@ -1,4 +1,4 @@
-import { MainStateType, ThunkType } from './../types';
+import { ThunkType } from './../types';
 import {
     GET_PRODUCTS,
     GET_CATEGORIES,
@@ -9,7 +9,6 @@ import ActionType from "../action-types";
 import {getAllProductsApi, getCategoriesApi, getNeededProductApi, setSpecificCategoryApi} from "../api/api";
 import { ProductType, SpecificCategoryType } from "../types";
 import { Dispatch } from "redux";
-import { ThunkAction } from 'redux-thunk';
 
 let initialState = {
     neededProduct: null as ProductType | null,

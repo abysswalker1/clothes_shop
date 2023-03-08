@@ -1,13 +1,48 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import ActionType from '../../../../action-types';
+import { CartProductType, productQuantityIncrementAction, productQuantityDecrementAction, removeProductFromCartAction } from '../../../../store/cartReducer';
+import './cartList.css';
 
-const CartItem = () => {
+type Props = {
+    item: CartProductType
+    productQuantityIncrementAction: (productId: number) => ActionType 
+    productQuantityDecrementAction: (productId: number) => ActionType
+    removeProductFromCartAction: (productId: number) => ActionType
+}
+
+const CartItem: React.FC<Props> = ({item, ...props}) => {
     return (
         <div className='cart-item'>
-            <div className="cart-item__product"></div>
-            <div className="cart-item__count"></div>
-            <button className="cart-item__delete"></button>
+            <Link to={`/products/${item.id}`} className="cart-item__product">
+                <div className="cart-item__image_wrap">
+                    <img src={item.product.image} alt="" className="cart-item__image" />
+                </div>
+                <p className="cart-item__product-title">{item.product.title}</p>
+            </Link>
+            <div className="cart-item__quantity">
+                <p className="cart-item__price">{item.product.price}</p>
+
+                <div className="cart-item__count">
+                    <button className="cart-item__count-decrement" onClick={() => props.productQuantityDecrementAction(item.id)} type="button">-</button>
+                    <span className="cart-item__count-number">
+                        {item.count}
+                    </span>
+                    <button className="cart-item__count-increment" onClick={() => props.productQuantityIncrementAction(item.id)} type="button">+</button>
+                </div>
+
+                <p className="cart-item__sum">{item.sum()}</p>
+            </div>
+            <div className="cart-item__delete">
+                <button className="cart-item__delete-btn" onClick={() => props.removeProductFromCartAction(item.id)} type='button'>
+                    <i className="bi bi-trash3"></i>
+                </button>
+            </div>
         </div>
     );
 };
 
-export default CartItem;
+export default connect(null, 
+    { productQuantityIncrementAction, productQuantityDecrementAction, removeProductFromCartAction }
+)(CartItem);
