@@ -1,6 +1,7 @@
 .main__container {
   display: grid;
   grid-template-columns: 200px 1fr;
+  padding-bottom: 30px;
 }
 
 @media screen and (max-width: 768px) {
