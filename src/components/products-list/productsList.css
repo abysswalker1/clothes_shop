@@ -5,3 +5,15 @@
     grid-gap: 10px;
     perspective: 1000px;
 }
+
+@media screen and (max-width: 991px) {
+    .products-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 577px) {
+    .products-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

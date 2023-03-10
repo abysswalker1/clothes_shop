@@ -13,6 +13,7 @@ body {
   --purple: #BD1E51;
   --yellow: #F1B814;
   --light-grey: #EFEFEF;
+  --title-blue: #335;
 }
 
 code {
@@ -55,8 +56,12 @@ button {
   padding: 0;
 }
 
+.number-font {
+  font-family:'Fjalla One', serif;
+  font-weight: 500;
+}
+
 i {
-  margin-right: 10px;
   font-size: 18px;
 }
 

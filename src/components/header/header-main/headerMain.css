@@ -1,11 +1,25 @@
 .header-main {
-    padding: 25px 0;
+    background-color: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #eceded;
+    box-shadow: 0 1px 5px #eceded;
 }
 
 .header-main__logo {
-    flex: 1;
+    display: flex;
+    align-items: center;
     font-size: 30px;
     font-weight: 700;
+    flex: 1;
+}
+
+.header-main__mobile-menu-btn {
+    margin-right: 20px;
+    display: none;
+}
+
+.header-main__mobile-menu-btn i {
+    font-size: 30px;
 }
 
 .header-main__container {
@@ -15,11 +29,16 @@
     column-gap: 30px;
 }
 
+.header-main__nav {
+    flex: 1;
+}
+
 .header-main__links {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    flex: 2;
+    column-gap: 20px;
+    flex: 1;
 }
 
 .header-main__btn-wrap {
@@ -28,8 +47,37 @@
     justify-content: flex-end;
     align-items: center;
 }
+
+.header-main__links-item {
+    position: relative;
+}
+
+.header-main__links-item i {
+    font-size: 20px;
+}
+
+.header-main__links-messages {
+    top: 0;
+    right: -6px;
+    position: absolute;
+    font-size: 11px;
+    font-weight: 700;
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--purple);
+}
+
 @media screen and (max-width: 991px) {
-    .header-main__links-item {
+    .header-main__nav {
         display: none;
+    }
+
+    .header-main__mobile-menu-btn {
+        display: block;
     }
 }

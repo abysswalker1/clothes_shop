@@ -13,7 +13,7 @@ const CartList: React.FC<Props> = (props) => {
     if( props.cartList.length <= 0 ) return <p>Корзина пуста</p>
 
     return (
-        <div>
+        <div className='cart-list'>
             <>{props.cartList.map( (item) => <CartItem item={item} />)}</>
             <p>{props.totalCount()}</p>
         </div>

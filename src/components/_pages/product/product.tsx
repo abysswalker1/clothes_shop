@@ -39,12 +39,12 @@ const Product: React.FC<Props> = ({ product, cartList, ...props }) => {
     };
 
     return (
-        <div className='product'>
+        <div className='product container'>
             <div className="product__image-wrap">
                 <img src={`${product.image}`} alt="" className="product__image"/>
             </div>
 
-            <div className="products__info">
+            <div className="product__info">
                 <h2 className="product__title">{product.title + '.'}</h2>
                 <h2 className="product__price">{product.price}</h2>
 

@@ -13,26 +13,32 @@ type Props = {
 }
 
 const CartItem: React.FC<Props> = ({item, ...props}) => {
+    let shortedTitle = (item.product.title?.length > 50)
+        ? item.product.title.slice(0, 46) + '...'
+        : item.product.title;
+
     return (
         <div className='cart-item'>
             <Link to={`/products/${item.id}`} className="cart-item__product">
                 <div className="cart-item__image_wrap">
                     <img src={item.product.image} alt="" className="cart-item__image" />
                 </div>
-                <p className="cart-item__product-title">{item.product.title}</p>
+                <p className="cart-item__product-title">{shortedTitle}</p>
             </Link>
             <div className="cart-item__quantity">
-                <p className="cart-item__price">{item.product.price}</p>
+                <p className="cart-item__price number-font">{item.product.price + ' р.'}</p>
 
                 <div className="cart-item__count">
-                    <button className="cart-item__count-decrement" onClick={() => props.productQuantityDecrementAction(item.id)} type="button">-</button>
+                    <button className={`cart-item__count-decrement ${(item.count === 1) ? 'count-disabled' : ''}`} 
+                            onClick={() => props.productQuantityDecrementAction(item.id)} type="button"
+                    >-</button>
                     <span className="cart-item__count-number">
                         {item.count}
                     </span>
                     <button className="cart-item__count-increment" onClick={() => props.productQuantityIncrementAction(item.id)} type="button">+</button>
                 </div>
 
-                <p className="cart-item__sum">{item.sum()}</p>
+                <p className="cart-item__sum number-font">{item.sum() + ' р.'}</p>
             </div>
             <div className="cart-item__delete">
                 <button className="cart-item__delete-btn" onClick={() => props.removeProductFromCartAction(item.id)} type='button'>

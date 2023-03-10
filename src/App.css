@@ -2,5 +2,8 @@
     min-height: 200vh;
     height: auto;
     position: relative;
+    background: rgb(255,205,223);
+    background: linear-gradient(45deg, rgba(255,205,223,1) 0%, rgba(245,255,254,1) 51%);
+
 }
 

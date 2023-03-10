@@ -11,7 +11,7 @@ type Props = {
 
 const Favs : React.FC<Props> = (props) => {
     return (
-        <div className='favs'>
+        <div className='favs container'>
             <h1 className='favs__title'><i className="bi bi-suit-heart-fill"></i>Избранное</h1>
             <ProductsList productsList={props.favsList}/>
         </div>

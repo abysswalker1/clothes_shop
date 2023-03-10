@@ -20,7 +20,7 @@ const HomePage: React.FC<Props> = (props) => {
     },[props.productsList]);
 
     return (
-        <div className='homepage'>
+        <div className='homepage container'>
             <ProductsList productsList={props.productsList}/>
         </div>
     );

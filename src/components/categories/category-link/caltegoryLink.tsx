@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 const CaltegoryLink = (props: any) => {
     return (
         <div className='category-link'>
-            <Link to={`products/category/${props.category}`}>{props.category}</Link>
+            <Link to={`/products/category/${props.category}`}>{props.category}</Link>
         </div>
     );
 };

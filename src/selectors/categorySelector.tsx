@@ -1,6 +1,6 @@
 import React from "react";
 import {createSelector} from "reselect";
-import CaltegoryLink from "../components/sidebar/category-link/caltegoryLink";
+import CaltegoryLink from "../components/categories/category-link/caltegoryLink";
 import { ProductsStateType } from "../store/productsReducer";
 
 const getCategorySelector = (state: ProductsStateType) => {

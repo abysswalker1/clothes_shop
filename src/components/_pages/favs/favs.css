@@ -1,6 +1,6 @@
 .favs__title {
     color: var(--purple);
-    border-bottom: 2px solid lightgrey;
+    border-bottom: 1px solid #eceded;
     padding-bottom: 0.5em;
 }
 
