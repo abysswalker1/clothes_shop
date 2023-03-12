@@ -10,8 +10,7 @@
    overflow: hidden;
    height: 0;
    transition: height 0.3s ease-in-out;
-   background: rgba(245,255,254,0.5);
-backdrop-filter: blur(70px);
+   background: rgba(245, 255, 254, 1);
 }
 
 .mobile-menu.expanded {
