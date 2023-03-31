@@ -1,0 +1,22 @@
+.price-picker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 30px;
+  border: 1px solid #aebdce;
+  border-radius: 3px;
+}
+
+.price-picker__buttons {
+  display: flex;
+}
+
+.price-picker__buttons button {
+  font-size: 12px;
+}
+
+.clear-range-button {
+  border: 1px solid red !important;
+  color: red !important;
+  text-transform: capitalize !important;
+}

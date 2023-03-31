@@ -1,0 +1,13 @@
+.footer {
+  padding: 20px;
+  background-color: rgba(3, 3, 5, 0.1);
+  backdrop-filter: blur(300px);
+  /* border-top: 1px solid rgba(3, 3, 5, 0.1); */
+  box-shadow: 0 0 4px rgba(3, 3, 5, 0.5);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+}
+

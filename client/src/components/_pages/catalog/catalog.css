@@ -1,0 +1,17 @@
+.main__container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-column-gap: 40px;
+  padding-bottom: 30px;
+}
+
+.catalog__price-range {
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .main__container {
+    grid-template-columns: 100%;
+  }
+}
