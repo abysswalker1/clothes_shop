@@ -24,11 +24,11 @@ export const postRegisterApi = (email: string, password: string) => {
         email: email,
         password: password
     }
-    return fetch('http://localhost:5000/auth/register', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    });
+    // return fetch('http://localhost:5000/auth/register', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify(data)
+    // });
 }

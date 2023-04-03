@@ -4,9 +4,13 @@ import {Form, Field} from 'react-final-form';
 import { registerThunk } from '../../../../store/authReducer';
 
 const Register = () => {
-  const onSubmit = (values: {email: string, password: string}) => {
-    if( values.email && values.password ){
-      registerThunk(values.email, values.password);
+  const onSubmit = (values: {email: string, password: string, passwordRepeat: string}) => {
+    if( values.email && values.password && values.passwordRepeat){
+      if( values.password === values.passwordRepeat ) {
+        registerThunk(values.email, values.password);
+      } else {
+        console.log('aaa')
+      }
     }
   }
 
@@ -34,6 +38,17 @@ const Register = () => {
                 <div className="std-input-wrap">
                   <Field 
                     name='password'
+                    component='input'
+                    type='password'  
+                  />
+                </div>
+              </div>
+
+              <div className="register__password-repeat">
+                <label htmlFor="password-repeat">Повторите пароль</label>
+                <div className="std-input-wrap">
+                  <Field 
+                    name='passwordRepeat'
                     component='input'
                     type='password'  
                   />

@@ -23,6 +23,6 @@ export const setUserAuthAction = (user: UserType | null) => ({type: SET_USER_AUT
 
 export const registerThunk = (email: string, password: string) => {
   postRegisterApi(email, password)
-    .then(response => response.json())
-    .then(response => console.log(response.body))
+    // .then(response => response.json())
+    // .then(response => console.log(response.body))
 } 

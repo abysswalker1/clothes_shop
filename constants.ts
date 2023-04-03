@@ -5,6 +5,7 @@ export const httpStatuses = {
 
   BAD_REQUEST_400: 400,
   NOT_FOUND_404: 404,
+  CONFLICT_409: 409,
 
   SERVER_ERROR_500: 500
 }

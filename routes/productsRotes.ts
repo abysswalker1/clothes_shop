@@ -1,10 +1,8 @@
 import express, { response } from 'express';;
 import { Response, Request } from 'express';
 import { httpStatuses } from '../constants';
-import { ProductType ,RequestWithBody, RequestWithQuery, RequestWithParams, SearchQueryParams } from '../types';
-import CreateProductModel from '../models/createProductModel';
-import bd from '../data.json' ;
-import { request } from 'http';
+import { ProductType ,RequestWithBody, RequestWithQuery, RequestWithParams, SearchQueryParams } from '../types'
+import bd from '../data.json'; 
 
 const { BAD_REQUEST_400, NOT_FOUND_404 } = httpStatuses;
 
