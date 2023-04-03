@@ -1,0 +1,5 @@
+envs:
+  NODE_ENV: production
+start:
+  web: node app.js
+root: ./build
