@@ -1,10 +1,10 @@
 {
    "name": "back",
    "version": "1.0.0",
-   "main": "index.js",
+   "main": "app.js",
    "license": "MIT",
    "scripts": {
-      "server": "nodemon .\\dist\\index.js",
+      "server": "nodemon ./dist/index.js",
       "watch": "tsc -w",
       "client": "yarn --cwd .\\client\\ run start",
       "start": "concurrently \"yarn server\" \"yarn watch\" \"yarn client\"",
