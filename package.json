@@ -7,8 +7,7 @@
       "server": "nodemon .\\dist\\index.js",
       "watch": "tsc -w",
       "client": "yarn --cwd .\\client\\ run start",
-      "dev": "concurrently \"yarn server\" \"yarn watch\" \"yarn client\"",
-      "start": "ts-node src/index.ts",
+      "start": "concurrently \"yarn server\" \"yarn watch\" \"yarn client\"",
       "typeorm": "typeorm-ts-node-commonjs"
    },
    "dependencies": {
