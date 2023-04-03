@@ -4,7 +4,7 @@
    "main": "app.js",
    "license": "MIT",
    "scripts": {
-      "start": "cross-env NODE_ENV=production node ./build/app.js",
+      "start": "cross-env NODE_ENV=production node app.js",
       "server": "nodemon .\\dist\\app.js",
       "watch": "tsc -w",
       "client": "yarn --cwd .\\client\\ run start",
