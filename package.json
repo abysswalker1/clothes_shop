@@ -1,14 +1,14 @@
 {
    "name": "back",
    "version": "1.0.0",
-   "main": "app.js",
+   "main": "index.js",
    "license": "MIT",
    "scripts": {
-      "start": "cross-env NODE_ENV=production --cwd ./build node app.js",
-      "server": "nodemon .\\dist\\app.js",
+      "start": "cross-env NODE_ENV=production node app.js",
+      "server": "nodemon .\\dist\\index.js",
       "watch": "tsc -w",
       "client": "yarn --cwd .\\client\\ run start",
-      "dev": "cross-env NODE_ENV=development concurrently \"yarn server\" \"yarn watch\" \"yarn client\"",
+      "dev": "concurrently \"yarn server\" \"yarn watch\" \"yarn client\"",
       "client:install": "yarn --cwd .\\client\\ install",
       "client:build": "yarn --cwd .\\client\\ run build",
       "typeorm": "typeorm-ts-node-commonjs"
