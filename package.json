@@ -4,13 +4,16 @@
    "main": "index.js",
    "license": "MIT",
    "scripts": {
-      "start": "cross-env NODE_ENV=production node ./build/index.js",
-      "server": "nodemon .\\dist\\index.js",
+      "build": "tsc",
+      "start": "node ./build",
+      "prod": "concurrently \"yarn build\" \" yarn run client:install \" \" yarn run client:build \"",
+      "server": "nodemon .\\build\\index.js",
       "watch": "tsc -w",
       "client": "yarn --cwd .\\client\\ run start",
       "dev": "concurrently \"yarn server\" \"yarn watch\" \"yarn client\"",
       "client:install": "yarn --cwd .\\client\\ install",
-      "client:build": "yarn --cwd .\\client\\ run build"
+      "client:build": "yarn --cwd .\\client\\ run build",
+      "typeorm": "typeorm-ts-node-commonjs"
    },
    "dependencies": {
       "bcryptjs": "^2.4.3",
@@ -19,7 +22,8 @@
       "cors": "^2.8.5",
       "express": "^4.18.2",
       "pg": "^8.4.0",
-      "reflect-metadata": "^0.1.13"
+      "reflect-metadata": "^0.1.13",
+      "typeorm": "^0.3.12"
    },
    "devDependencies": {
       "@types/express": "^4.17.17",
