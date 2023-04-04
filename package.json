@@ -5,8 +5,8 @@
    "license": "MIT",
    "scripts": {
       "build": "tsc",
-      "start": "node ./build",
-      "prod": "concurrently \"yarn build\" \" yarn run client:install \" \" yarn run client:build \"",
+      "start": "cross-env NODE_ENV=production node ./build",
+      "prod": "concurrently \"yarn build\" \" yarn client:install \" \" yarn client:build \"",
       "server": "nodemon .\\build\\index.js",
       "watch": "tsc -w",
       "client": "yarn --cwd .\\client\\ run start",
