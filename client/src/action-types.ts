@@ -1,4 +1,4 @@
-import {ProductType, SpecificCategoryType, UserType} from "./types";
+import {CategoryType, ProductType, SpecificCategoryType, UserType} from "./types";
 
 // Products Action.types
 export const GET_PRODUCTS = 'GET_PRODUCTS';
@@ -23,7 +23,7 @@ type getProductsActionType = {
 
 type getCategoriesActionType = {
     type: typeof GET_CATEGORIES
-    payload: Array<string>
+    payload: CategoryType[]
 }
 
 type setSpecificCategoryActionType = {

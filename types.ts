@@ -1,9 +1,13 @@
 import { Request } from "express";
 
+export type CategoryType  = {
+  cateory_id: number
+  cateorry_title: string
+}
+
 export type ProductType = {
   id: number
-  categories?: string[]
-  category: string
+  categories: number[]
   title: string
   description: string
   image: string

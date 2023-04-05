@@ -12,6 +12,11 @@ export type ProductType = {
     sale?: { title: string, percent: number }
 }
 
+export type CategoryType  = {
+  category_id: number
+  category_title: string
+}
+
 export type UserType = {
   id: number
   email: string

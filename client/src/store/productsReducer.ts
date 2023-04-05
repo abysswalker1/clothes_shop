@@ -18,12 +18,12 @@ import {
   setSpecificCategoryApi,
   getSearchedProductByQueryApi,
 } from '../api/api';
-import { ProductType, SpecificCategoryType } from '../types';
+import { ProductType, SpecificCategoryType, CategoryType } from '../types';
 import { Dispatch } from 'redux';
 
 let initialState = {
   neededProduct: null as ProductType | null,
-  categories: [] as Array<string>,
+  categories: [] as CategoryType[],
   productsList: [] as Array<ProductType>,
   specificCategories: [] as Array<SpecificCategoryType>,
   favs: [] as Array<ProductType>,
@@ -101,7 +101,7 @@ export const getProductsAction = (products: Array<ProductType>): ActionType => (
   type: GET_PRODUCTS,
   payload: products,
 });
-export const getCategoriesAction = (categories: Array<string>): ActionType => ({
+export const getCategoriesAction = (categories: CategoryType[]): ActionType => ({
   type: GET_CATEGORIES,
   payload: categories,
 });

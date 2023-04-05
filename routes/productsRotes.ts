@@ -41,8 +41,7 @@ const getProductsRoutes= () => {
 
   Router.get( '/get_categories', 
     (_, response) => {
-      let categoriesList = bd.products.map(item => item.category);
-      response.json([... new Set(categoriesList)]);
+      response.json(bd.categories)
     }
   )
   
@@ -56,7 +55,7 @@ const getProductsRoutes= () => {
   Router.get( '/categories/:title',     
     (request: RequestWithParams<{title: string}>, response: Response<ProductType[]>) => {
       let filter = filterBySearchParams(request.query);
-      const specificCategory = bd.products.filter(item => item.category === request.params.title)
+      const specificCategory = bd.products.filter(item => item.categories.includes(+request.params.title))
 
       if( filter ){
         let filteredProductsList = specificCategory.filter(item => filter && filter(item));

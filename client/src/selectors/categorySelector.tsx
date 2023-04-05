@@ -10,8 +10,9 @@ const getCategorySelector = (state: ProductsStateType) => {
 export const getCategoryHighSelector = createSelector(getCategorySelector, (categories) => {
     return categories.map((item) => {
         return (<CaltegoryLink
-            key={item}
-            category={item}
+            key={item.category_id}
+            item={item
+            }
         />)
     })
 })
