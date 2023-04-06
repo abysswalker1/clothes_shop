@@ -8,7 +8,10 @@
       "description":"Mens Heavy Fleece Lined Sherpa Hoodie Plaid Flannel Jacket Hood Coat Sweatshirt",
       "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
       "imageList": [],
-      "sale": {"title": "Весенняя распродажа", "percent": 30}
+      "parameters": [
+        {"size": "32", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
     },
     {
       "id": 2,
@@ -18,7 +21,11 @@
       "description":"Men's Ripped Skinny Jeans Stretch Trousers Casual Slim Daily Chic Denim Pants",
       "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
       "imageList": [],
-      "sale": {"title": "Весенняя распродажа", "percent": 30}
+      "sale": {"title": "Весенняя распродажа", "percent": 30},
+      "parameters": [
+        {"size": "32", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
     },
     {
       "id": 3,
@@ -28,7 +35,10 @@
       "description":"Women's Summer Dress Casual Belt Vintage Retro 50s Short Sleeve Dotted",
       "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
       "imageList": [],
-      "sale": {"title": "Весенняя распродажа", "percent": 30}
+      "parameters": [
+        {"size": "32", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
     },
     {
       "id": 4,
@@ -38,7 +48,11 @@
       "description":"Men's Retro Stainless Steel Vintage Crystal Rhinestone Army Military Rings",
       "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
       "imageList": [],
-      "sale": {"title": "Весенняя распродажа", "percent": 30}
+      "sale": {"title": "Весенняя распродажа", "percent": 30},
+      "parameters": [
+        {"size": "32", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
     },
     {
       "id": 5,
@@ -48,7 +62,11 @@
       "description":"Includes all the functions of digital joy-pad. 12 Analog keys in 3D mode add variety and intelligence in operation. Support game, with two different Motors inside, produce two different vibration effects.",
       "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
       "imageList": [],
-      "sale": {"title": "Черная пятница", "percent": 70}
+      "sale": {"title": "Черная пятница", "percent": 70},
+      "parameters": [
+        {"size": "32", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
     },
     {
       "id": 6,
@@ -58,7 +76,10 @@
       "description":"The LED display time, month, day, seconds. Automatic calendar. Power saving mode.",
       "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
       "imageList": [],
-      "sale": {"title": "Черная пятница", "percent": 70}
+      "parameters": [
+        {"size": "32", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
       },
     {
       "id": 7,
@@ -68,7 +89,10 @@
       "description":"High fidelity sound quality. Built in high-performance DAC chip",
       "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
       "imageList": [],
-      "sale": {"title": "Черная пятница", "percent": 70}
+      "parameters": [
+        {"size": "32", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
       },
     {
       "id": 8,
@@ -78,7 +102,11 @@
       "description":"Universal Cigarette Lighter, USB Charger, Universal Mobile Phone",
       "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
       "imageList": [],
-      "sale": {"title": "Черная пятница", "percent": 70}
+      "sale": {"title": "Черная пятница", "percent": 70},
+      "parameters": [
+        {"size": "32", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
       },
     {
       "id": 9,
@@ -88,7 +116,11 @@
       "description":"BCShiny sequin cutout shawl. The mesh is soft and ideal for delicate and elegant modeling. Exquisite material and mesh weaving combination.",
       "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
       "imageList": [],
-      "sale": {"title": "Черная пятница", "percent": 70}
+      "sale": {"title": "Черная пятница", "percent": 70},
+      "parameters": [
+        {"size": "32", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
       },
     {
       "id": 10,
@@ -98,7 +130,11 @@
       "description":"Polyester\/cotton",
       "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
       "imageList": [],
-      "sale": {"title": "Черная пятница", "percent": 70}
+      "sale": {"title": "Черная пятница", "percent": 70},
+      "parameters": [
+        {"size": "32", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
     }
   ],
   "categories": [

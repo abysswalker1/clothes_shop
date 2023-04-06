@@ -7,6 +7,7 @@ import Loader from "../../common/loader/loader";
 import { MainStateType, ProductType, ThunkType } from '../../../types';
 import ActionType from '../../../action-types';
 import { addProductToCartAction, CartProductType } from '../../../store/cartReducer';
+import CreateOrderButton from './create-order/CreateOrderButton';
 
 type Props = {
     product: ProductType 
@@ -14,22 +15,14 @@ type Props = {
     cartList: CartProductType[]
     getNeededProductThunk: (itemId: number) => ThunkType
     addProductToFavsAction: (product: ProductType) => ActionType
-    addProductToCartAction: (product: ProductType) => ActionType
 }
 
 const Product: React.FC<Props> = ({ product, cartList, ...props }) => {
     const { itemId } = useParams();
-    const [isInCart, setIsInCart] = React.useState(false);
 
     useEffect(() => {
         props.getNeededProductThunk(+itemId);
     },[itemId]);
-
-    useEffect(() => {
-        if(cartList.find(item => item.id === +itemId)){
-            setIsInCart(true)
-        }
-    },[itemId, cartList]);
 
     if( props.isFetching ){
         return <Loader />
@@ -47,20 +40,14 @@ const Product: React.FC<Props> = ({ product, cartList, ...props }) => {
             <div className="product__info">
                 <h2 className="product__title">{product.title + '.'}</h2>
                 <h2 className="product__price">{product.price}</h2>
-
                 <div className="product__buttons">
                     <button className='product__buttons-item product-add-to-favs'
                             onClick={() => {props.addProductToFavsAction(product)}} type='button'
                     >
                         <i className="bi bi-suit-heart"></i>
                     </button>
-                    <div className='product__buttons-item product-create-order'>
-                        { (isInCart)
-                            ? <Link to={'/cart'} className='product__buttons-item-toggle'>Оформить заказ</Link> 
-                            : <button className='product__buttons-item-toggle' onClick={() => {props.addProductToCartAction(product)}}>
-                                <i className="bi bi-cart4"></i> Добавить в корзину
-                              </button> 
-                        }
+                    <div>
+                        <CreateOrderButton product={product}/>
                     </div>
                 </div>
             </div>

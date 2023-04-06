@@ -7,9 +7,9 @@ import './cartList.css';
 
 type Props = {
     item: CartProductType
-    productQuantityIncrementAction: (productId: number) => ActionType 
-    productQuantityDecrementAction: (productId: number) => ActionType
-    removeProductFromCartAction: (productId: number) => ActionType
+    productQuantityIncrementAction: (productId: string) => ActionType 
+    productQuantityDecrementAction: (productId: string) => ActionType
+    removeProductFromCartAction: (productId: string) => ActionType
 }
 
 const CartItem: React.FC<Props> = ({item, ...props}) => {
@@ -23,7 +23,10 @@ const CartItem: React.FC<Props> = ({item, ...props}) => {
                 <div className="cart-item__image_wrap">
                     <img src={item.product.image} alt="" className="cart-item__image" />
                 </div>
-                <p className="cart-item__product-title">{shortedTitle}</p>
+                <div className="">
+                    <p className="cart-item__product-title">{shortedTitle}</p>
+                    <p className='cart-item__product-size'>Размер: {item.size}</p>
+                </div>
             </Link>
             <div className="cart-item__quantity">
                 <p className="cart-item__price number-font">{item.product.price + ' р.'}</p>

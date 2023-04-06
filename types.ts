@@ -5,6 +5,13 @@ export type CategoryType  = {
   cateorry_title: string
 }
 
+export type SizeType = "36" | "38" | "42" | "44" | "46" | "48" | "50" | "52" | "54";
+
+export type ProductParameterType = {
+  size: SizeType,
+  quantity: number
+}
+
 export type ProductType = {
   id: number
   categories: number[]
@@ -13,7 +20,7 @@ export type ProductType = {
   image: string
   imageList?: string[]
   price: number
-  rating?: any
+  parameters: ProductParameterType[]
   sale?: { title: string, percent: number }
 }
 

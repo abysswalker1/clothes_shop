@@ -1,15 +1,17 @@
 import { ADD_PRODUCT_TO_CART, PRODUCT_QUANTITY_DECREMENT, PRODUCT_QUANTITY_INCREMENT, REMOVE_PRODUCT_FROM_CART } from './../action-types';
 import ActionType from '../action-types';
-import { ProductType } from './../types';
+import { ProductType, SizeType } from './../types';
 
 export class CartProductType {
-  readonly  id: number
+  readonly  id: string
+  readonly  size: SizeType
   public    count: number = 1
   readonly  product: ProductType
   readonly  sum: () => number
-  constructor( product: ProductType ) {
-    this.id = product.id
-    this.product = product
+  constructor( specificProduct: {product: ProductType, size: SizeType} ) {
+    this.id = specificProduct.product.id + specificProduct.size
+    this.size = specificProduct.size
+    this.product = specificProduct.product
     this.sum = function() {
       return this.product.price * this.count;
     }
@@ -35,13 +37,18 @@ const cartReducer = (state: CartStateType = initialState, action: ActionType): C
     return item;
   }
 
-  const removeCartProduct = (array: CartProductType[], itemToDelete: number): CartProductType[] => {
+  const removeCartProduct = (array: CartProductType[], itemToDelete: string): CartProductType[] => {
     return array.filter(item => item.id !== itemToDelete);
   }
 
   switch(action.type) {
     case ADD_PRODUCT_TO_CART: {
       const newCartProduct = new CartProductType(action.payload);
+      const duplicate = state.cartList.find(item=> item.id === newCartProduct.id);
+
+      if( duplicate ){
+        return {...state, cartList: removeCartProduct(state.cartList, newCartProduct.id)}
+      }
 
       return {...state, cartList: state.cartList.concat(newCartProduct)}
     }
@@ -69,22 +76,22 @@ const cartReducer = (state: CartStateType = initialState, action: ActionType): C
   }
 }
 
-export const addProductToCartAction = (product: ProductType): ActionType => ({
+export const addProductToCartAction = (specificProduct: {product: ProductType, size: SizeType}): ActionType => ({
   type: ADD_PRODUCT_TO_CART, 
-  payload: product
+  payload: specificProduct
 })
 
-export const productQuantityIncrementAction = (productId: number): ActionType => ({
+export const productQuantityIncrementAction = (productId: string): ActionType => ({
   type: PRODUCT_QUANTITY_INCREMENT, 
   payload: productId
 })
 
-export const productQuantityDecrementAction = (productId: number): ActionType => ({
+export const productQuantityDecrementAction = (productId: string): ActionType => ({
   type: PRODUCT_QUANTITY_DECREMENT, 
   payload: productId
 })
 
-export const removeProductFromCartAction = (productId: number): ActionType => ({
+export const removeProductFromCartAction = (productId: string): ActionType => ({
   type: REMOVE_PRODUCT_FROM_CART, 
   payload: productId
 })

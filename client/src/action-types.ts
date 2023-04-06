@@ -1,4 +1,4 @@
-import {CategoryType, ProductType, SpecificCategoryType, UserType} from "./types";
+import {CategoryType, ProductType, SizeType, SpecificCategoryType, UserType} from "./types";
 
 // Products Action.types
 export const GET_PRODUCTS = 'GET_PRODUCTS';
@@ -59,22 +59,22 @@ export const PRODUCT_QUANTITY_DECREMENT = 'PRODUCT_QUANTITY_DECREMENT';
 
 type addProductToCartActionType = {
     type: typeof ADD_PRODUCT_TO_CART
-    payload: ProductType
+    payload: {product: ProductType, size: SizeType}
 }
 
 type removeProductFromCart = {
     type: typeof REMOVE_PRODUCT_FROM_CART
-    payload: number
+    payload: string
 }
 
 type productQuantityIncrement = {
     type: typeof PRODUCT_QUANTITY_INCREMENT
-    payload: number
+    payload: string
 }
 
 type productQuantityDecrement = {
     type: typeof PRODUCT_QUANTITY_DECREMENT
-    payload: number
+    payload: string
 }
 
 //Auth Action.types

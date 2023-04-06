@@ -1,0 +1,31 @@
+.size-list {
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  color: #333; 
+  box-shadow: 0 0 2px #333; 
+}
+
+.size-list__item {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #337; 
+  cursor: pointer;
+}
+
+.size-list__item:hover .bi-cart-plus {
+  color: #333;
+}
+
+.size-list__in-cart-flag {
+  margin-right: 8px;
+}
+
+.size-list__in-cart-flag .bi {
+  font-size: 17px;
+}
+
+.size-list__in-cart-flag .bi-cart-check-fill {
+  color: blue;
+}

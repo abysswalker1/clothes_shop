@@ -1,5 +1,12 @@
 import { ReducersType } from './store/store';
 
+export type SizeType = "36" | "38" | "42" | "44" | "46" | "48" | "50" | "52" | "54";
+
+export type ProductParameterType = {
+  size: SizeType,
+  quantity: number
+}
+
 export type ProductType = {
     id: number
     categories?: string[]
@@ -9,6 +16,7 @@ export type ProductType = {
     image: string
     imageList?: []
     price: number
+    parameters: ProductParameterType[]
     sale?: { title: string, percent: number }
 }
 

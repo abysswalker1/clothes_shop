@@ -18,8 +18,8 @@ const BreadCrumbs = () => {
   } 
 
   useEffect(()  =>  {
-    let accumulator = '';
     let correctTitle = (title: string): string => translateTitles[title] || title || '...';
+    let accumulator = '';
 
     setCrumbElems(() => {
       const newCrumbsList = []; 
