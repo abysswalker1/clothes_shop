@@ -44,6 +44,10 @@ code {
   padding: 0;
 }
 
+.page-title {
+  margin-block-end: 1em;
+}
+
 .std-button:hover {
   background: var(--purple);
   color: #fff;
@@ -79,4 +83,21 @@ input {
   border: none;
   background: none;
   outline: none;
+}
+
+textarea {
+  width: 100%;
+  background: none;
+}
+
+.std-input-wrap {
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 8px 12px;
+}
+
+.price-without-sale {
+  font-size: 0.8em;
+  color: seagreen;
+  text-decoration: line-through;
 }

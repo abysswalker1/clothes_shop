@@ -1,0 +1,15 @@
+.products-slide-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.products-slide-item__img-wrap {
+  width: 100%;
+  height: 280px;
+}
+
+.products-slide-item__img {
+  height: 100%;
+  object-fit: cover;
+}
+

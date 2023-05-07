@@ -5,7 +5,7 @@ export type CategoryType  = {
   cateorry_title: string
 }
 
-export type SizeType = "36" | "38" | "42" | "44" | "46" | "48" | "50" | "52" | "54";
+export type SizeType = string  //"36" | "38" | "42" | "44" | "46" | "48" | "50" | "52" | "54";
 
 export type ProductParameterType = {
   size: SizeType,
@@ -20,9 +20,16 @@ export type ProductType = {
   image: string
   imageList?: string[]
   price: number
+  fullPrice?: number
   parameters: ProductParameterType[]
   sale?: { title: string, percent: number }
 }
+
+export interface CompilationType {
+  title: string
+  items: ProductType[]
+  pages: number
+};
 
 export type SearchQueryParams = {
   title?: string

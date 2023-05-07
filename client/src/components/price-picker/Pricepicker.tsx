@@ -29,9 +29,9 @@ const Pricepicker: React.FC<Props> = (props) => {
         max={props.totalPrice.maximumPrice}
       />
       <div className="price-picker__buttons">
-        <Button onClick={() => props.setPriceRangeAction(range)}>Применить</Button>
+        <Button onClick={() => props.setPriceRangeAction(range)} data-testid='range-set-button'>Применить</Button>
         { props.priceRange &&  
-          <Button onClick={() => props.setPriceRangeAction(null)} className='clear-range-button'>
+          <Button onClick={() => props.setPriceRangeAction(null)} data-testid='range-clear-button' className='clear-range-button'>
             сбросить
           </Button>
         }

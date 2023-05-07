@@ -1,16 +1,18 @@
 import { ADD_PRODUCT_TO_CART, PRODUCT_QUANTITY_DECREMENT, PRODUCT_QUANTITY_INCREMENT, REMOVE_PRODUCT_FROM_CART } from './../action-types';
 import ActionType from '../action-types';
-import { ProductType, SizeType } from './../types';
+import { ProductParameterType, ProductType, SizeType, SpecificCartProductType } from './../types';
 
 export class CartProductType {
   readonly  id: string
   readonly  size: SizeType
+  public    maxQuantity: number
   public    count: number = 1
   readonly  product: ProductType
   readonly  sum: () => number
-  constructor( specificProduct: {product: ProductType, size: SizeType} ) {
-    this.id = specificProduct.product.id + specificProduct.size
-    this.size = specificProduct.size
+  constructor( specificProduct: SpecificCartProductType ) {
+    this.id = specificProduct.product.id + specificProduct.parameters.size
+    this.size = specificProduct.parameters.size
+    this.maxQuantity = specificProduct.parameters.quantity
     this.product = specificProduct.product
     this.sum = function() {
       return this.product.price * this.count;
@@ -42,6 +44,7 @@ const cartReducer = (state: CartStateType = initialState, action: ActionType): C
   }
 
   switch(action.type) {
+
     case ADD_PRODUCT_TO_CART: {
       const newCartProduct = new CartProductType(action.payload);
       const duplicate = state.cartList.find(item=> item.id === newCartProduct.id);
@@ -56,7 +59,7 @@ const cartReducer = (state: CartStateType = initialState, action: ActionType): C
     case PRODUCT_QUANTITY_INCREMENT: {
 
       return { ...state, cartList: state.cartList.map(
-        item => updateCount(item, (item.id === action.payload), item.count + 1)
+        item => updateCount(item, (item.id === action.payload && item.count < item.maxQuantity), item.count + 1)
       )};   
     }
 
@@ -76,7 +79,7 @@ const cartReducer = (state: CartStateType = initialState, action: ActionType): C
   }
 }
 
-export const addProductToCartAction = (specificProduct: {product: ProductType, size: SizeType}): ActionType => ({
+export const addProductToCartAction = (specificProduct: SpecificCartProductType): ActionType => ({
   type: ADD_PRODUCT_TO_CART, 
   payload: specificProduct
 })

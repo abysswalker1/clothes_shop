@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import './createOrderButton.css';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { MainStateType, ProductType, SizeType } from '../../../../types';
+import { MainStateType, ProductParameterType, ProductType, SizeType, SpecificCartProductType } from '../../../../types';
 import ActionType from '../../../../action-types';
 import { addProductToCartAction, CartProductType } from '../../../../store/cartReducer';
 import SizeListItem from './SizeListItem';
@@ -10,14 +10,14 @@ import SizeListItem from './SizeListItem';
 type Props = {
   product: ProductType
   cartList: CartProductType[]
-  addProductToCartAction: (specificProduct: {product: ProductType, size: SizeType}) => ActionType
+  addProductToCartAction: (specificProduct: SpecificCartProductType) => ActionType
 }
 
 const CreateOrderButton: React.FC<Props> = ({product, ...props}) => {
   const [active, setActive] = React.useState(false);
 
-  const addSpecificProductToCart = (size: SizeType) => {
-    props.addProductToCartAction({product, size})
+  const addSpecificProductToCart = (parameters: ProductParameterType) => {
+    props.addProductToCartAction({product, parameters})
   }
 
   return (
@@ -32,7 +32,7 @@ const CreateOrderButton: React.FC<Props> = ({product, ...props}) => {
           { 
             product.parameters.map( param => {
               if( param.quantity > 0 ){
-                return <SizeListItem id={product.id} size={param.size}  addSpecificProductToCart={addSpecificProductToCart}/>    
+                return <SizeListItem id={product.id} parameters={param}  addSpecificProductToCart={addSpecificProductToCart}/>    
               }
             })
           }

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Breadcrumbs } from '@material-ui/core';
 import { useLocation } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import './breadCrumbs.css'
 
 const BreadCrumbs = () => {
   const location = useLocation();

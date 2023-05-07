@@ -15,7 +15,6 @@ const CartList: React.FC<Props> = (props) => {
     return (
         <div className='cart-list'>
             <>{props.cartList.map( (item) => <CartItem item={item} />)}</>
-            <p>{props.totalCount()}</p>
         </div>
     );
 };

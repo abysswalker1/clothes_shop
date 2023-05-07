@@ -13,17 +13,15 @@ import Cart from "./components/_pages/cart/cart";
 import { getProductsThunk } from './store/productsReducer';
 import Footer from './components/footer/Footer';
 import Main from './components/main/main';
-import Sale from './components/_pages/sale/sale';
 import Register from './components/_pages/auth/register/Register';
+import About from './components/_pages/about/About';
+import { MainStateType, ThunkType } from './types';
 
 type Props = {
-    getProductsThunk: () => any
+    
 }
 
 class App extends Component<Props> {
-  componentDidMount(): void {
-    this.props.getProductsThunk();
-  }
 
   render() {
     return (
@@ -39,15 +37,15 @@ class App extends Component<Props> {
               <Route path='/products/:itemId' element={<Product />} ></Route>
               <Route path='/favorites' element={<Favs />}></Route>
               <Route path='/cart' element={<Cart />}></Route>
-              <Route path='/sale' element={<Sale />}></Route>
+              <Route path='/about' element={<About />}></Route>
               <Route path='/register' element={<Register />}></Route>
             </Routes>
           </Main>
           <Footer />
         </div>
-      </BrowserRouter>
+      </BrowserRouter> 
     );
   }
 }
 
-export default connect(null, { getProductsThunk })(App);
+export default connect()(App);

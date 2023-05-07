@@ -15,14 +15,26 @@ export type ProductType = {
     description: string
     image: string
     imageList?: []
+    article: string
     price: number
+    fullPrice?: number
     parameters: ProductParameterType[]
     sale?: { title: string, percent: number }
 }
 
-export type CategoryType  = {
+export interface CategoryType {
   category_id: number
-  category_title: string
+  category_title: string  
+}
+
+export interface SaleCategoryType extends CategoryType {
+  category_type: 'SALE'
+  percentage: number
+}
+
+export type SpecificCartProductType = {
+  product: ProductType
+  parameters: ProductParameterType
 }
 
 export type UserType = {
@@ -31,14 +43,23 @@ export type UserType = {
 }
 
 export type SearchQueryParams = {
-    title?: string
-    min?: number
-    max?: number
-  }
+  title?: string
+  min?: number
+  max?: number
+}
+
+export type PageLoadType = {
+  count: number
+  thunk: ThunkType
+}
 
 export type ProductsListType = JSX.Element[] 
 
-export type SpecificCategoryType = [string, Array<ProductType>]
+export interface CompilationType {
+  title: string
+  items: ProductType[]
+  pages: number
+};
 
 export type MainStateType = ReturnType<ReducersType>
 

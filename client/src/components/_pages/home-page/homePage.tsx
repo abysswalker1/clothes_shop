@@ -1,35 +1,45 @@
 import React, {useEffect} from 'react';
-import ProductsList from "../../products-list/productsList";
-import { getProductsThunk } from "../../../store/productsReducer";
+import { setSpecificCategoryThunk } from "../../../store/productsReducer";
 import './homepage.css'
 import {connect} from "react-redux";
-import productsListSelector from "../../../selectors/productsListSelector";
-import { MainStateType, ProductsListType } from '../../../types';
+import { CategoryType, CompilationType, MainStateType} from '../../../types';
+import Compilation from '../../compilation/Compilation';
+import ActionType from '../../../action-types';
+import Loader from '../../common/loader/loader';
+import ScrollTriggerWrap from '../../../HOCs/scrollTrigger';
+import { compose } from 'redux';
 
 type Props = {
-    productsList: ProductsListType,
-    getProductsThunk: () => void
+    specificCategories: CompilationType[]
+    isFetching: boolean
+    setSpecificCategoryThunk: (title: string | string[]) => ActionType
 }
 
 const HomePage: React.FC<Props> = (props) => {
 
     useEffect(() => {
-        if(props.productsList.length <= 0) {
-            props.getProductsThunk();
-        }
-    },[props.productsList]);
+        props.setSpecificCategoryThunk('1');
+        props.setSpecificCategoryThunk('2');
+    },[]);
+
+    
 
     return (
         <div className='homepage container'>
-            <ProductsList productsList={props.productsList}/>
+            {props.specificCategories.map(category => <Compilation item={category}/>)}
+            {props.isFetching && <Loader />}
         </div>
     );
 };
 
 const mapStateToProps = (state: MainStateType) => {
     return {
-        productsList: productsListSelector(state.products.productsList)
+        specificCategories: state.products.specificCategories,
+        isFetching: state.products.isFetching
     }
 }
 
-export default connect(mapStateToProps, { getProductsThunk })(HomePage);
+export default compose(
+    
+    connect(mapStateToProps, { setSpecificCategoryThunk })
+)(HomePage);

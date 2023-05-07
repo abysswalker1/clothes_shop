@@ -1,7 +1,7 @@
 .product-card_wrap {
     position: relative;
     width: 100%;
-    height: 320px;
+    height: 500px;
 }
 
 .product-card {
@@ -11,52 +11,72 @@
     height: 100%;
     padding-bottom: 10px;
     background-color: #fff;
-    box-shadow: 2px 2px 5px lightgrey;
+    box-shadow: 0px 0px 3px lightgrey;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-    -webkit-font-smoothing: subpixel-antialiased;
-    transform: scale(1) translateY(0);
-    transition: transform 200ms ease-in;
-}
-
-.product-card_wrap:hover .product-card {
-    height: calc(100% + 2em);
-    transform: scale(101%) translateY(10px);
-    box-shadow: 3px 3px 7px lightgrey;
-    z-index: 2;
 }
 
 .product-card__img-wrap {
-    padding: 20px;
+    flex: 1;
     width: 100%;
     height: 200px;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .product-card__img {
-    object-fit: contain;
-    width: 100%;
+    object-fit: cover;
     height: 100%;
+    width: 100%;
+}
+
+.product-card__img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    padding: 7px;
+}
+
+.img-overlay-section {
+    flex: 1;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+    display: flex;
+    align-items: flex-end;
+}
+
+.img-overlay-progress {
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    border-radius: 10px;
+    transition: all ease 0.3s;
+}
+
+.product-card__img-overlay:hover .img-overlay-progress {
+    background-color: gray;
+}
+ 
+.img-overlay-section:hover .img-overlay-progress {
+    background-color: #fff;
 }
 
 .product-card__title {
+    margin-top: 8px;
     max-width: 90%;
     font-size: 20px;
     height: 3em;
     transition: height 200ms ease-in;
     overflow: hidden;
-}
-
-.product-card_wrap:hover .product-card__title {
-    height: 5em;
 }
 
 .product-card__add-to-favs {

@@ -1,78 +1,69 @@
 import React, { useEffect } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
-import { compose } from 'redux';
+import { Action, compose } from 'redux';
 import { connect } from 'react-redux';
 import {
   setSpecificCategoryThunk,
   getSearchedProductsThunk,
   getSearchedResultsAction,
   setPriceRangeAction,
+  getProductsThunk
 } from '../../../store/productsReducer';
 import ProductsList from '../../products-list/productsList';
 import productsListSelector from '../../../selectors/productsListSelector';
 import {
   MainStateType,
-  SpecificCategoryType,
+  CompilationType,
   ProductType,
   SearchQueryParams,
   CategoryType,
+  ThunkType,
 } from '../../../types';
 import Sidebar from '../../sidebar/sidebar';
 import './catalog.css';
+import ActionType from '../../../action-types';
 
 type Props = {
-  specificCategories: Array<SpecificCategoryType>;
+  specificCategories: Array<CompilationType>;
   products: Array<ProductType>;
   searchResults: Array<ProductType> | null;
   priceRange: null | number[];
   categories: CategoryType[];
   setSpecificCategoryThunk: (title: string) => void;
   getSearchedProductsThunk: (params: SearchQueryParams, categoryTitle: string) => void;
+  getProductsThunk: () => void;
   getSearchedResultsAction: any;
   setPriceRangeAction: any;
 };
 
 const Catalog: React.FC<Props> = (props) => {
   const location = useLocation();
-  const navigate = useNavigate();
   const queryParams = new URLSearchParams(location.search);
   const { title } = useParams();
   const [productsList, setProductsList] = React.useState<JSX.Element[]>([]);
 
   useEffect(() => {
-    let neededCategory = props.specificCategories.filter((item) => item[0] === title);
+    if(props.products.length <= 0){
+      props.getProductsThunk()
+    }
+  },[])
+
+  useEffect(() => {
+    let neededCategory: CompilationType = props.specificCategories.find((item) => item.title === title);
 
     if (props.searchResults) {
       setProductsList(productsListSelector(props.searchResults));
     } else if (!title) {
       setProductsList(productsListSelector(props.products));
-    } else if (neededCategory.length > 0) {
-      setProductsList(productsListSelector(neededCategory[0][1]));
+    } else if (neededCategory) {
+      setProductsList(productsListSelector(neededCategory.items));
     } else {
       props.setSpecificCategoryThunk(title);
     }
   }, [title, props.specificCategories, props.products, props.searchResults]);
 
   useEffect(() => {
-    let isTitleParam = queryParams.get('title') ? `title=${queryParams.get('title')}&` : '';
-
-    if (props.priceRange) {
-      navigate(
-        `${location.pathname}?${isTitleParam}min=${props.priceRange[0]}&max=${props.priceRange[1]}`,
-      );
-    } else {
-      navigate(`${location.pathname}? ${isTitleParam}`);
-    }
-  }, [props.priceRange, title]);
-
-  useEffect(() => {
     props.getSearchedResultsAction(null);
-    if (queryParams.get('title') || queryParams.get('max') || queryParams.get('min')) {
-      props.getSearchedProductsThunk(
-        Object.fromEntries(queryParams),
-        title ? `categories/${title}` : '',
-      );
-    }
   }, [location]);
 
   return (
@@ -80,7 +71,7 @@ const Catalog: React.FC<Props> = (props) => {
       <div className="main__container container">
         <Sidebar />
         <div className="catalog">
-          <h1 className="catalog__title">
+          <h1 className="page-title">
             {(title &&
               props.categories
                 .filter((category) => category.category_id === +title)
@@ -93,7 +84,7 @@ const Catalog: React.FC<Props> = (props) => {
               </span>
             )}
           </h1>
-          <ProductsList key={productsList.length} productsList={productsList} />
+          <ProductsList key={productsList.length} productsList={productsList} loadMore={props.getProductsThunk} />
         </div>
       </div>
     </main>
@@ -110,11 +101,20 @@ const mapStateToProps = (state: MainStateType) => {
   };
 };
 
+const mapDispatchToProps = (dispatch: (action: ActionType | ThunkType) => void) => {
+  let pageCount = 1;
+  console.log(pageCount)
+  return {
+    setSpecificCategoryThunk: (title: string) => dispatch(setSpecificCategoryThunk(title)),
+    getSearchedProductsThunk: () => dispatch(getSearchedProductsThunk),
+    getSearchedResultsAction: () => dispatch(getSearchedResultsAction),
+    setPriceRangeAction: () => dispatch(setPriceRangeAction),
+    getProductsThunk: () => {
+     return  dispatch(getProductsThunk(pageCount++))
+    }
+  }
+}
+
 export default compose(
-  connect(mapStateToProps, {
-    setSpecificCategoryThunk,
-    getSearchedProductsThunk,
-    getSearchedResultsAction,
-    setPriceRangeAction,
-  }),
+  connect(mapStateToProps, mapDispatchToProps),
 )(Catalog);

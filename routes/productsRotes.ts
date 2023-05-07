@@ -1,7 +1,6 @@
-import express, { response } from 'express';;
-import { Response, Request } from 'express';
+import express,  { Response, Request } from 'express';
 import { httpStatuses } from '../constants';
-import { ProductType ,RequestWithBody, RequestWithQuery, RequestWithParams, SearchQueryParams } from '../types'
+import { ProductType ,RequestWithBody, RequestWithQuery, RequestWithParams, SearchQueryParams, CompilationType } from '../types'
 import bd from '../data.json'; 
 
 const { BAD_REQUEST_400, NOT_FOUND_404 } = httpStatuses;
@@ -26,19 +25,20 @@ const getProductsRoutes= () => {
     return;
   }
 
-  Router.get( '/', 
-    (request: RequestWithQuery<{title: string, min: number, max: number}>, response: Response<ProductType[]>) => {
-      let filter = filterBySearchParams(request.query);
 
-      if( filter ){
-        let filteredProductsList = bd.products.filter(item => filter && filter(item));
-        response.json(filteredProductsList);
-      } else {
-        response.json(bd.products);
-      }
-    }
-  )
+  const computePriceWithSale = (product: ProductType) => {
+    const { price } = product;
 
+    if (product.sale) {
+      product.price = price - (price * product.sale.percent / 100);
+      product.fullPrice = price;
+    }  
+    return product;
+  }
+
+  const products = bd.products.map(product => computePriceWithSale(product))
+
+  //Router
   Router.get( '/get_categories', 
     (_, response) => {
       response.json(bd.categories)
@@ -47,41 +47,49 @@ const getProductsRoutes= () => {
   
   Router.get( '/:id', 
     (request: RequestWithParams<{id: number}>, response: Response<ProductType>) => {
-      const neededProduct = bd.products.find(item => item.id === +request.params.id);
+      const neededProduct = products.find(item => item.id === +request.params.id);
       response.json(neededProduct);
     }
   )
 
   Router.get( '/categories/:title',     
-    (request: RequestWithParams<{title: string}>, response: Response<ProductType[]>) => {
-      let filter = filterBySearchParams(request.query);
-      const specificCategory = bd.products.filter(item => item.categories.includes(+request.params.title))
+    (request: RequestWithParams<{title: string}>, response: Response<CompilationType>) => {
+      let resultProducts = products;
 
-      if( filter ){
-        let filteredProductsList = specificCategory.filter(item => filter && filter(item));
-        response.json(filteredProductsList)
-      } else {
-        response.json(specificCategory);
-      }
+      if( +request.params.title > 0 )
+        resultProducts = products.filter(item => item.categories.includes(+request.params.title));
+
+      response.json(
+        {
+          title: request.params.title,
+          items: resultProducts,
+          pages: resultProducts.length / 8
+        }
+      );
     }
+
   )
-  
-  // Router.post( '/', 
-  //   ( request: RequestWithBody<CreateProductModel>, response: Response<ProductType>) => {
-  //     if( !request.body.title ){
-  //       response.sendStatus(BAD_REQUEST_400);
-  //       return;
-  //     }
-  //     const newProduct = {
-  //       id: +(new Date()),
-  //       title: request.body.title,
-  //       category: "woman's clothes",
-  //       image: "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
-  //       description: 'some description',
-  //       price: 20
-  //     }
-  //   }
-  // )
+
+  Router.get('/categories/:title/:page', 
+  (request: RequestWithParams<{title: string, page: string}>, response: Response<ProductType[]>) => {
+    let resultProducts = products;
+
+    if( +request.params.title > 0 )
+      resultProducts = products.filter((item: ProductType) => item.categories.includes(+request.params.title));
+
+    let getPage = (products: ProductType[]) => {
+      let lastItem = 8;
+      
+      if( +request.params.page > 1 ) {
+        lastItem = lastItem * +request.params.page;
+      }
+
+      return products.slice(lastItem - 8, lastItem)
+    }
+
+    response.json(getPage(resultProducts))
+  })
+
   return Router;
 }
 

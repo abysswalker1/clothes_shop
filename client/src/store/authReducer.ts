@@ -1,5 +1,4 @@
 import { response } from 'express';
-import { postRegisterApi } from './../api/api';
 import ActionType, {SET_USER_AUTH} from "../action-types";
 import { UserType } from "../types";
 
@@ -20,9 +19,3 @@ const authReducer = (state: AuthStateType, action: ActionType) => {
 }
 
 export const setUserAuthAction = (user: UserType | null) => ({type: SET_USER_AUTH, payload: user});
-
-export const registerThunk = (email: string, password: string) => {
-  postRegisterApi(email, password)
-    // .then(response => response.json())
-    // .then(response => console.log(response.body))
-} 

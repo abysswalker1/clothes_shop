@@ -6,15 +6,17 @@ import { getSearchedProductsThunk } from '../../../store/productsReducer';
 import './search.css';
 
 type Props = {
-  
+  getSearchedProductsThunk: (params: {title: string}) => void
 }
 
 const Search: React.FC<Props> = (props) => {
   const navigate = useNavigate(); 
 
   const onSubmit = (values: {search: string}) => {
-    if( values.search )
-      navigate(`/products?title=${values.search}`)
+    if( values.search ) {
+      navigate(`/products`)
+      props.getSearchedProductsThunk({title: values.search})
+    }
   }
 
   return (
@@ -31,4 +33,4 @@ const Search: React.FC<Props> = (props) => {
   );
 };
 
-export default connect(null)(Search);
+export default connect(null, { getSearchedProductsThunk })(Search);

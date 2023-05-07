@@ -1,6 +1,11 @@
 
-export const getAllProductsApi = () => {
-    return fetch('http://localhost:5000/products', {})
+export const getAllProductsApi = (title: string = '0', page: number = 1) => {
+    return fetch(`http://localhost:5000/products/categories/${title}/${page}`, {
+        mode: 'cors',
+        headers: {
+          'Access-Control-Allow-Origin': '*'
+        }
+    })
 }
 
 export const getCategoriesApi = () => {
@@ -16,19 +21,11 @@ export const getNeededProductApi = (itemId: number) => {
 }
 
 export const getSearchedProductByQueryApi = (searchParams: string, categoryType: string) => {
-    return fetch(`http://localhost:5000/products/${categoryType}${searchParams}`)
+    if(categoryType){
+        return fetch(`http://localhost:5000/products/${categoryType + '/'}${searchParams}`)
+    } else {
+        return fetch(`http://localhost:5000/products/${searchParams}`)
+    }
+    
 }
     
-export const postRegisterApi = (email: string, password: string) => {
-    let data = {
-        email: email,
-        password: password
-    }
-    // return fetch('http://localhost:5000/auth/register', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(data)
-    // });
-}

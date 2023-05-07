@@ -19,7 +19,7 @@ const CartItem: React.FC<Props> = ({item, ...props}) => {
 
     return (
         <div className='cart-item'>
-            <Link to={`/products/${item.id}`} className="cart-item__product">
+            <Link to={`/products/${item.product.id}`} className="cart-item__product">
                 <div className="cart-item__image_wrap">
                     <img src={item.product.image} alt="" className="cart-item__image" />
                 </div>

@@ -2,157 +2,613 @@
   [
     {
       "id": 1,
+      "article": "12GB34H",
       "title": "Mens Hoodie Jacket",
-      "categories": [1],
+      "categories": [0, 1],
       "price": 700,
       "description":"Mens Heavy Fleece Lined Sherpa Hoodie Plaid Flannel Jacket Hood Coat Sweatshirt",
       "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
       "imageList": [],
       "parameters": [
-        {"size": "32", "quantity": 12},
+        {"size": "42", "quantity": 12},
         {"size": "36", "quantity": 5}
       ]
     },
     {
       "id": 2,
+      "article": "12GB34H",
       "title": "Black Men's Jeans",
-      "categories": [1],
+      "categories": [0, 1],
       "price": 1200,
       "description":"Men's Ripped Skinny Jeans Stretch Trousers Casual Slim Daily Chic Denim Pants",
       "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
       "imageList": [],
       "sale": {"title": "Весенняя распродажа", "percent": 30},
       "parameters": [
-        {"size": "32", "quantity": 12},
+        {"size": "42", "quantity": 12},
         {"size": "36", "quantity": 5}
       ]
     },
     {
       "id": 3,
+      "article": "12GB34H",
       "title": "Women's Summer Dress",
-      "categories": [2],
+      "categories": [0, 2],
       "price": 3000,
       "description":"Women's Summer Dress Casual Belt Vintage Retro 50s Short Sleeve Dotted",
       "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
       "imageList": [],
       "parameters": [
-        {"size": "32", "quantity": 12},
+        {"size": "42", "quantity": 12},
         {"size": "36", "quantity": 5}
       ]
     },
     {
       "id": 4,
+      "article": "12GB34H",
       "title": "Men's Rings",
-      "categories": [3],
+      "categories": [0, 3],
       "price": 899,
       "description":"Men's Retro Stainless Steel Vintage Crystal Rhinestone Army Military Rings",
       "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
       "imageList": [],
       "sale": {"title": "Весенняя распродажа", "percent": 30},
       "parameters": [
-        {"size": "32", "quantity": 12},
+        {"size": "42", "quantity": 12},
         {"size": "36", "quantity": 5}
       ]
     },
     {
       "id": 5,
+      "article": "12GB34H",
       "title": "OEM PlayStation 2 PS2 Clear Ocean Blue Controller DualShock 2 SCPH-10010",
-      "categories": [4],
+      "categories": [0, 4],
       "price": 2900,
       "description":"Includes all the functions of digital joy-pad. 12 Analog keys in 3D mode add variety and intelligence in operation. Support game, with two different Motors inside, produce two different vibration effects.",
       "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
       "imageList": [],
       "sale": {"title": "Черная пятница", "percent": 70},
       "parameters": [
-        {"size": "32", "quantity": 12},
+        {"size": "42", "quantity": 12},
         {"size": "36", "quantity": 5}
       ]
     },
     {
       "id": 6,
+      "article": "12GB34H",
       "title": "Sports LED Wrist Watch Silicone Rubber Digital Running Womens Mens Boys Girls",
-      "categories": [2],
+      "categories": [0, 2],
       "price": 4500,
       "description":"The LED display time, month, day, seconds. Automatic calendar. Power saving mode.",
       "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
       "imageList": [],
       "parameters": [
-        {"size": "32", "quantity": 12},
+        {"size": "42", "quantity": 12},
         {"size": "36", "quantity": 5}
       ]
       },
     {
       "id": 7,
+      "article": "12GB34H",
       "title": "USB-C Type C To 3.5mm Audio Aux Headphone Jack Cable Adapter",
-      "categories": [4],
+      "categories": [0, 4],
       "price": 3990,
       "description":"High fidelity sound quality. Built in high-performance DAC chip",
       "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
       "imageList": [],
       "parameters": [
-        {"size": "32", "quantity": 12},
+        {"size": "42", "quantity": 12},
         {"size": "36", "quantity": 5}
       ]
       },
     {
       "id": 8,
+      "article": "12GB34H",
       "title": "2V 24V 4.2A Bus Dual USB Charging Socket Power Adapter Car USB Charger",
-      "categories": [4],
+      "categories": [0, 4],
       "price": 2000,
       "description":"Universal Cigarette Lighter, USB Charger, Universal Mobile Phone",
       "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
       "imageList": [],
       "sale": {"title": "Черная пятница", "percent": 70},
       "parameters": [
-        {"size": "32", "quantity": 12},
+        {"size": "42", "quantity": 12},
         {"size": "36", "quantity": 5}
       ]
       },
     {
       "id": 9,
+      "article": "12GB34H",
       "title": "new women's clothing autumn slimming BC shiny handmade sequin linen silk knitwear hollow batwing sleeve shawl",
-      "categories": [2, 3],
+      "categories": [0, 2, 3],
       "price": 1500,
       "description":"BCShiny sequin cutout shawl. The mesh is soft and ideal for delicate and elegant modeling. Exquisite material and mesh weaving combination.",
       "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
       "imageList": [],
       "sale": {"title": "Черная пятница", "percent": 70},
       "parameters": [
-        {"size": "32", "quantity": 12},
+        {"size": "42", "quantity": 12},
         {"size": "36", "quantity": 5}
       ]
       },
     {
       "id": 10,
+      "article": "12GB34H",
       "title": "Run Vent Tech Grey\/ Black Long Sleeve Shirt women's Sz Unknown sweater",
-      "categories": [4],
+      "categories": [0, 4],
       "price": 6000,
       "description":"Polyester\/cotton",
       "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
       "imageList": [],
       "sale": {"title": "Черная пятница", "percent": 70},
       "parameters": [
-        {"size": "32", "quantity": 12},
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+    },
+    {
+      "id": 11,
+      "article": "12GB34H",
+      "title": "Mens Hoodie Jacket",
+      "categories": [0, 1],
+      "price": 700,
+      "description":"Mens Heavy Fleece Lined Sherpa Hoodie Plaid Flannel Jacket Hood Coat Sweatshirt",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+    },
+    {
+      "id": 12,
+      "article": "12GB34H",
+      "title": "Black Men's Jeans",
+      "categories": [0, 1],
+      "price": 1200,
+      "description":"Men's Ripped Skinny Jeans Stretch Trousers Casual Slim Daily Chic Denim Pants",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "sale": {"title": "Весенняя распродажа", "percent": 30},
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+    },
+    {
+      "id": 13,
+      "article": "12GB34H",
+      "title": "Women's Summer Dress",
+      "categories": [0, 2],
+      "price": 3000,
+      "description":"Women's Summer Dress Casual Belt Vintage Retro 50s Short Sleeve Dotted",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+    },
+    {
+      "id": 14,
+      "article": "12GB34H",
+      "title": "Men's Rings",
+      "categories": [0, 3],
+      "price": 899,
+      "description":"Men's Retro Stainless Steel Vintage Crystal Rhinestone Army Military Rings",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "sale": {"title": "Весенняя распродажа", "percent": 30},
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+    },
+    {
+      "id": 15,
+      "article": "12GB34H",
+      "title": "OEM PlayStation 2 PS2 Clear Ocean Blue Controller DualShock 2 SCPH-10010",
+      "categories": [0, 4],
+      "price": 2900,
+      "description":"Includes all the functions of digital joy-pad. 12 Analog keys in 3D mode add variety and intelligence in operation. Support game, with two different Motors inside, produce two different vibration effects.",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "sale": {"title": "Черная пятница", "percent": 70},
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+    },
+    {
+      "id": 16,
+      "article": "12GB34H",
+      "title": "Sports LED Wrist Watch Silicone Rubber Digital Running Womens Mens Boys Girls",
+      "categories": [0, 2],
+      "price": 4500,
+      "description":"The LED display time, month, day, seconds. Automatic calendar. Power saving mode.",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+      },
+    {
+      "id": 17,
+      "article": "12GB34H",
+      "title": "USB-C Type C To 3.5mm Audio Aux Headphone Jack Cable Adapter",
+      "categories": [0, 4],
+      "price": 3990,
+      "description":"High fidelity sound quality. Built in high-performance DAC chip",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+      },
+    {
+      "id": 18,
+      "article": "12GB34H",
+      "title": "2V 24V 4.2A Bus Dual USB Charging Socket Power Adapter Car USB Charger",
+      "categories": [0, 4],
+      "price": 2000,
+      "description":"Universal Cigarette Lighter, USB Charger, Universal Mobile Phone",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "sale": {"title": "Черная пятница", "percent": 70},
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+      },
+    {
+      "id": 19,
+      "article": "12GB34H",
+      "title": "new women's clothing autumn slimming BC shiny handmade sequin linen silk knitwear hollow batwing sleeve shawl",
+      "categories": [0, 2, 3],
+      "price": 1500,
+      "description":"BCShiny sequin cutout shawl. The mesh is soft and ideal for delicate and elegant modeling. Exquisite material and mesh weaving combination.",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "sale": {"title": "Черная пятница", "percent": 70},
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+      },
+    {
+      "id": 20,
+      "article": "12GB34H",
+      "title": "Run Vent Tech Grey\/ Black Long Sleeve Shirt women's Sz Unknown sweater",
+      "categories": [0, 4],
+      "price": 6000,
+      "description":"Polyester\/cotton",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "sale": {"title": "Черная пятница", "percent": 70},
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+    },
+    {
+      "id": 21,
+      "article": "12GB34H",
+      "title": "Mens Hoodie Jacket",
+      "categories": [0, 1],
+      "price": 700,
+      "description":"Mens Heavy Fleece Lined Sherpa Hoodie Plaid Flannel Jacket Hood Coat Sweatshirt",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+    },
+    {
+      "id": 22,
+      "article": "12GB34H",
+      "title": "Black Men's Jeans",
+      "categories": [0, 1],
+      "price": 1200,
+      "description":"Men's Ripped Skinny Jeans Stretch Trousers Casual Slim Daily Chic Denim Pants",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "sale": {"title": "Весенняя распродажа", "percent": 30},
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+    },
+    {
+      "id": 23,
+      "article": "12GB34H",
+      "title": "Women's Summer Dress",
+      "categories": [0, 2],
+      "price": 3000,
+      "description":"Women's Summer Dress Casual Belt Vintage Retro 50s Short Sleeve Dotted",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+    },
+    {
+      "id": 24,
+      "article": "12GB34H",
+      "title": "Men's Rings",
+      "categories": [0, 3],
+      "price": 899,
+      "description":"Men's Retro Stainless Steel Vintage Crystal Rhinestone Army Military Rings",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "sale": {"title": "Весенняя распродажа", "percent": 30},
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+    },
+    {
+      "id": 25,
+      "article": "12GB34H",
+      "title": "OEM PlayStation 2 PS2 Clear Ocean Blue Controller DualShock 2 SCPH-10010",
+      "categories": [0, 4],
+      "price": 2900,
+      "description":"Includes all the functions of digital joy-pad. 12 Analog keys in 3D mode add variety and intelligence in operation. Support game, with two different Motors inside, produce two different vibration effects.",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "sale": {"title": "Черная пятница", "percent": 70},
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+    },
+    {
+      "id": 26,
+      "article": "12GB34H",
+      "title": "Sports LED Wrist Watch Silicone Rubber Digital Running Womens Mens Boys Girls",
+      "categories": [0, 2],
+      "price": 4500,
+      "description":"The LED display time, month, day, seconds. Automatic calendar. Power saving mode.",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+      },
+    {
+      "id": 27,
+      "article": "12GB34H",
+      "title": "USB-C Type C To 3.5mm Audio Aux Headphone Jack Cable Adapter",
+      "categories": [0, 4],
+      "price": 3990,
+      "description":"High fidelity sound quality. Built in high-performance DAC chip",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+      },
+    {
+      "id": 28,
+      "article": "12GB34H",
+      "title": "2V 24V 4.2A Bus Dual USB Charging Socket Power Adapter Car USB Charger",
+      "categories": [0, 4],
+      "price": 2000,
+      "description":"Universal Cigarette Lighter, USB Charger, Universal Mobile Phone",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "sale": {"title": "Черная пятница", "percent": 70},
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+      },
+    {
+      "id": 29,
+      "article": "12GB34H",
+      "title": "new women's clothing autumn slimming BC shiny handmade sequin linen silk knitwear hollow batwing sleeve shawl",
+      "categories": [0, 2, 3],
+      "price": 1500,
+      "description":"BCShiny sequin cutout shawl. The mesh is soft and ideal for delicate and elegant modeling. Exquisite material and mesh weaving combination.",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "sale": {"title": "Черная пятница", "percent": 70},
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+      },
+    {
+      "id": 30,
+      "article": "12GB34H",
+      "title": "Run Vent Tech Grey\/ Black Long Sleeve Shirt women's Sz Unknown sweater",
+      "categories": [0, 4],
+      "price": 6000,
+      "description":"Polyester\/cotton",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "sale": {"title": "Черная пятница", "percent": 70},
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+    },
+    {
+      "id": 31,
+      "article": "12GB34H",
+      "title": "Mens Hoodie Jacket",
+      "categories": [0, 1],
+      "price": 700,
+      "description":"Mens Heavy Fleece Lined Sherpa Hoodie Plaid Flannel Jacket Hood Coat Sweatshirt",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+    },
+    {
+      "id": 32,
+      "article": "12GB34H",
+      "title": "Black Men's Jeans",
+      "categories": [0, 1],
+      "price": 1200,
+      "description":"Men's Ripped Skinny Jeans Stretch Trousers Casual Slim Daily Chic Denim Pants",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "sale": {"title": "Весенняя распродажа", "percent": 30},
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+    },
+    {
+      "id": 33,
+      "article": "12GB34H",
+      "title": "Women's Summer Dress",
+      "categories": [0, 2],
+      "price": 3000,
+      "description":"Women's Summer Dress Casual Belt Vintage Retro 50s Short Sleeve Dotted",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+    },
+    {
+      "id": 34,
+      "article": "12GB34H",
+      "title": "Men's Rings",
+      "categories": [0, 3],
+      "price": 899,
+      "description":"Men's Retro Stainless Steel Vintage Crystal Rhinestone Army Military Rings",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "sale": {"title": "Весенняя распродажа", "percent": 30},
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+    },
+    {
+      "id": 35,
+      "article": "12GB34H",
+      "title": "OEM PlayStation 2 PS2 Clear Ocean Blue Controller DualShock 2 SCPH-10010",
+      "categories": [0, 4],
+      "price": 2900,
+      "description":"Includes all the functions of digital joy-pad. 12 Analog keys in 3D mode add variety and intelligence in operation. Support game, with two different Motors inside, produce two different vibration effects.",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "sale": {"title": "Черная пятница", "percent": 70},
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+    },
+    {
+      "id": 36,
+      "article": "12GB34H",
+      "title": "Sports LED Wrist Watch Silicone Rubber Digital Running Womens Mens Boys Girls",
+      "categories": [0, 2],
+      "price": 4500,
+      "description":"The LED display time, month, day, seconds. Automatic calendar. Power saving mode.",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+      },
+    {
+      "id": 37,
+      "article": "12GB34H",
+      "title": "USB-C Type C To 3.5mm Audio Aux Headphone Jack Cable Adapter",
+      "categories": [0, 4],
+      "price": 3990,
+      "description":"High fidelity sound quality. Built in high-performance DAC chip",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+      },
+    {
+      "id": 38,
+      "article": "12GB34H",
+      "title": "2V 24V 4.2A Bus Dual USB Charging Socket Power Adapter Car USB Charger",
+      "categories": [0, 4],
+      "price": 2000,
+      "description":"Universal Cigarette Lighter, USB Charger, Universal Mobile Phone",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "sale": {"title": "Черная пятница", "percent": 70},
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+      },
+    {
+      "id": 39,
+      "article": "12GB34H",
+      "title": "new women's clothing autumn slimming BC shiny handmade sequin linen silk knitwear hollow batwing sleeve shawl",
+      "categories": [0, 2, 3],
+      "price": 1500,
+      "description":"BCShiny sequin cutout shawl. The mesh is soft and ideal for delicate and elegant modeling. Exquisite material and mesh weaving combination.",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "sale": {"title": "Черная пятница", "percent": 70},
+      "parameters": [
+        {"size": "42", "quantity": 12},
+        {"size": "36", "quantity": 5}
+      ]
+      },
+    {
+      "id": 40,
+      "article": "12GB34H",
+      "title": "Run Vent Tech Grey\/ Black Long Sleeve Shirt women's Sz Unknown sweater",
+      "categories": [0, 4],
+      "price": 6000,
+      "description":"Polyester\/cotton",
+      "image": "https://yandex.ru/images/search?from=tabbar&text=sweatshirt%20stock%20image&pos=18&img_url=http%3A%2F%2Fst2.depositphotos.com%2F1027775%2F9252%2Fi%2F450%2Fdepositphotos_92524056-stock-photo-blue-cotton-sweater.jpg&rpt=simage&lr=54",
+      "imageList": [],
+      "sale": {"title": "Черная пятница", "percent": 70},
+      "parameters": [
+        {"size": "42", "quantity": 12},
         {"size": "36", "quantity": 5}
       ]
     }
   ],
   "categories": [
     {
+      "category_id": 0,
+      "category_title": "Всё"
+    },
+    {
       "category_id": 1,
-      "category_title": "Верхняя одежда"
+      "category_title": "Верхняя одежда",
+      "category_type": "CLOTHES_TYPE"
     },
     {
       "category_id": 2,
-      "category_title": "Женская  одежда"
+      "category_title": "Женская  одежда",
+      "category_type": "CLOTHES_TYPE"
     },
     {
       "category_id": 3,
-      "category_title": "Ювеилрные изделия"
+      "category_title": "Ювеилрные изделия",
+      "category_type": "CLOTHES_TYPE"
     },
     {
       "category_id": 4,
-      "category_title": "Мужская  одежда"
+      "category_title": "Мужская  одежда",
+      "category_type": "CLOTHES_TYPE"
     }
   ]
 }

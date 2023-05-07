@@ -1,4 +1,4 @@
-import {CategoryType, ProductType, SizeType, SpecificCategoryType, UserType} from "./types";
+import {CategoryType, ProductType, SizeType, SpecificCartProductType, CompilationType, UserType, ThunkType} from "./types";
 
 // Products Action.types
 export const GET_PRODUCTS = 'GET_PRODUCTS';
@@ -9,6 +9,7 @@ export const GET_NEEDED_PRODUCT = 'GET_NEEDED_PRODUCT';
 export const ADD_PRODUCT_TO_FAVS = 'ADD_PRODUCT_TO_FAVS';
 export const GET_SEARCHED_RESULTS = 'GET_SEARCHED_RESULTS';
 export const SET_PRICE_RANGE = 'SET_PRICE_RANGE';
+export const CHANGE_PAGE = 'CHANGE_PAGE';
 
 // Products Actions
 type getSearchedResultsActionType = {
@@ -28,7 +29,7 @@ type getCategoriesActionType = {
 
 type setSpecificCategoryActionType = {
     type: typeof SET_SPECIFIC_CATEGORY
-    payload: SpecificCategoryType
+    payload: CompilationType
 }
 
 type toggleIsFetchingActionType = {
@@ -51,6 +52,11 @@ type setPriceRangeActionType = {
     payload: null | number[];
 }
 
+type changePage = {
+    type: typeof CHANGE_PAGE
+    payload: number
+}
+
 // Cart Action.types
 export const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART';
 export const REMOVE_PRODUCT_FROM_CART = 'REMOVE_PRODUCT_FROM_CART';
@@ -59,7 +65,7 @@ export const PRODUCT_QUANTITY_DECREMENT = 'PRODUCT_QUANTITY_DECREMENT';
 
 type addProductToCartActionType = {
     type: typeof ADD_PRODUCT_TO_CART
-    payload: {product: ProductType, size: SizeType}
+    payload: SpecificCartProductType
 }
 
 type removeProductFromCart = {
@@ -88,6 +94,6 @@ type setUserAuthActionType = {
 type ActionType =  addProductToFavsActionType | getNeededProductActionType | toggleIsFetchingActionType
     | setSpecificCategoryActionType | getCategoriesActionType | getProductsActionType | addProductToCartActionType | 
     removeProductFromCart | productQuantityIncrement | productQuantityDecrement | getSearchedResultsActionType
-    | setPriceRangeActionType | setUserAuthActionType
+    | setPriceRangeActionType | setUserAuthActionType | changePage;
 
 export default ActionType;

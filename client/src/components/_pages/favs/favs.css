@@ -1,9 +1,10 @@
 .favs__title {
     color: var(--purple);
-    border-bottom: 1px solid #eceded;
+    border-bottom: 1px solid #333;
     padding-bottom: 0.5em;
 }
 
 .favs__title i {
     font-size: 30px;
+    margin-right: 15px;
 }

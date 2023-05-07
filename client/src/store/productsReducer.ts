@@ -8,7 +8,8 @@ import {
   GET_NEEDED_PRODUCT,
   ADD_PRODUCT_TO_FAVS,
   GET_SEARCHED_RESULTS,
-  SET_PRICE_RANGE
+  SET_PRICE_RANGE,
+  CHANGE_PAGE
 } from '../action-types';
 import ActionType from '../action-types';
 import {
@@ -18,19 +19,19 @@ import {
   setSpecificCategoryApi,
   getSearchedProductByQueryApi,
 } from '../api/api';
-import { ProductType, SpecificCategoryType, CategoryType } from '../types';
+import { ProductType, CompilationType, CategoryType, PageLoadType } from '../types';
 import { Dispatch } from 'redux';
 
 let initialState = {
   neededProduct: null as ProductType | null,
   categories: [] as CategoryType[],
   productsList: [] as Array<ProductType>,
-  specificCategories: [] as Array<SpecificCategoryType>,
+  specificCategories: [] as Array<CompilationType>,
   favs: [] as Array<ProductType>,
   searchResults: null as Array<ProductType> | null,
   isFetching: false,
   totalPrice: {minimumPrice: 700, maximumPrice: 6000},
-  priceRange: null as number[] | null
+  priceRange: null as number[] | null,
 };
 
 export type ProductsStateType = typeof initialState;
@@ -39,16 +40,18 @@ const productsReducer = (
   state: ProductsStateType = initialState,
   action: ActionType,
 ): ProductsStateType => {
+
   if(action.type !== TOGGLE_IS_FETCHING) console.log(action.type, action.payload);
 
   switch (action.type) {
     case GET_PRODUCTS: {
-      return { ...state, productsList: action.payload };
+      let newProductsList = state.productsList.concat(action.payload)
+      return { ...state, productsList: newProductsList };
     }
 
     case SET_SPECIFIC_CATEGORY: {
       for (let item of state.specificCategories) {
-        if (item[0] === action.payload[0]) {
+        if (item.title === action.payload.title) {
           return { ...state };
         }
       }
@@ -109,7 +112,7 @@ export const toggleIsFetchingAction = (isFetching: boolean): ActionType => ({
   type: TOGGLE_IS_FETCHING,
   payload: isFetching,
 });
-export const setSpecificCategoryAction = (category: SpecificCategoryType): ActionType => ({
+export const setSpecificCategoryAction = (category: CompilationType): ActionType => ({
   type: SET_SPECIFIC_CATEGORY,
   payload: category,
 });
@@ -125,6 +128,10 @@ export const setPriceRangeAction = (range: number[] | null): ActionType => ({
   type: SET_PRICE_RANGE,
   payload: range
 })
+export const changePageAction = (page: number): ActionType => ({
+  type: CHANGE_PAGE,
+  payload: page
+})
 
 export const getCategoriesThunk = (): ThunkType => (dispatch: Dispatch<ActionType>) => {
   getCategoriesApi()
@@ -134,17 +141,22 @@ export const getCategoriesThunk = (): ThunkType => (dispatch: Dispatch<ActionTyp
     })
 };
 
-export const getProductsThunk = (): ThunkType => (dispatch: Dispatch<ActionType>) => {
-  dispatch(toggleIsFetchingAction(true));
-
-  getAllProductsApi()
-    .then((response) => response.json())
-    .then((response) => {
-      dispatch(getProductsAction(response));
-      dispatch(toggleIsFetchingAction(false));
-    });
-};
-
+export const getProductsThunk = (page: number): ThunkType => {
+  const thunk = (dispatch: Dispatch<ActionType>) => {
+    dispatch(toggleIsFetchingAction(true));
+    dispatch(changePageAction(page + 1))
+    getAllProductsApi()
+      .then((response) => {
+        console.log(response)
+      return response.json()
+      })
+      .then((response) => {
+        dispatch(getProductsAction(response));
+        dispatch(toggleIsFetchingAction(false));
+      });
+  };
+  return thunk;
+}
 export const setSpecificCategoryThunk =
   (title: string): ThunkType =>
   (dispatch: Dispatch<ActionType>) => {
@@ -152,7 +164,7 @@ export const setSpecificCategoryThunk =
     setSpecificCategoryApi(title)
       .then((response) => response.json())
       .then((response) => {
-        dispatch(setSpecificCategoryAction([title, response]));
+        dispatch(setSpecificCategoryAction(response));
         dispatch(toggleIsFetchingAction(false));
       })
   };
@@ -167,11 +179,11 @@ export const getNeededProductThunk =
       .then((response) => {
         dispatch(getNeededProductAction(response));
         dispatch(toggleIsFetchingAction(false));
-      });
-  };
+  });
+};
 
-export const getSearchedProductsThunk =
-  (params: SearchQueryParams, categoryTitle: string) => (dispatch: Dispatch<ActionType>) => {
+export const getSearchedProductsThunk = (params: SearchQueryParams, categoryTitle?: string) => {
+  let thunk = (dispatch: Dispatch<ActionType>) => {
     dispatch(toggleIsFetchingAction(true));
 
     let paramsToRequest = '?';
@@ -182,7 +194,10 @@ export const getSearchedProductsThunk =
       .then((response) => {
         dispatch(getSearchedResultsAction(response));
         dispatch(toggleIsFetchingAction(false));
-      });
+    });
   };
+
+  return thunk;
+}
 
 export default productsReducer;

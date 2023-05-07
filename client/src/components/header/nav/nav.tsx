@@ -17,7 +17,7 @@ const Nav: React.FC<Props> = (props) => {
       <Link to={'/products'} className="nav__categories-link">Каталог</Link>
       <Link to={'/sale'}>Акции</Link>
       <Link to={'/'}>Контакты</Link>
-      <Link to={'/'}>О нас</Link>
+      <Link to={'/about'}>О нас</Link>
     </nav>
   );
 };

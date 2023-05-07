@@ -1,17 +1,10 @@
 import React from 'react';
 import './register.css'
 import {Form, Field} from 'react-final-form';
-import { registerThunk } from '../../../../store/authReducer';
 
 const Register = () => {
   const onSubmit = (values: {email: string, password: string, passwordRepeat: string}) => {
-    if( values.email && values.password && values.passwordRepeat){
-      if( values.password === values.passwordRepeat ) {
-        registerThunk(values.email, values.password);
-      } else {
-        console.log('aaa')
-      }
-    }
+    
   }
 
   return (

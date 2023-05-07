@@ -1,11 +1,11 @@
 import React from "react";
 import {createSelector} from "reselect";
 import ProductCard from "../components/products-list/product-card/productCard";
-import { SpecificCategoryType } from "../types";
+import { CompilationType } from "../types";
 
 
-const getSpecificCategorySelector = (state: SpecificCategoryType) => {
-    return state[1];
+const getSpecificCategorySelector = (state: CompilationType) => {
+    return state.items;
 };
 
 export const getSpecificCategoryHighSelector = createSelector(getSpecificCategorySelector, (products) => {
